@@ -1,0 +1,45 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "username": "teste",
+      "password": "123",
+      "age": 20
+    },
+    {
+      "id": "ca1d",
+      "username": "matheus",
+      "password": null,
+      "age": 20
+    },
+    {
+      "id": "46fb",
+      "username": "romeo",
+      "password": null,
+      "age": 15
+    },
+    {
+      "id": "34dd",
+      "username": "Noah",
+      "password": null
+    }
+  ],
+  "movies": [
+    {"id": 11, "title": "The Shawshank Redemption", "year": "1994", "actors": ["Tim Robbins", "Morgan Freeman"]},
+    {"id": 12, "title": "The Godfather", "year": "1972", "actors": ["Marlon Brando", "Al Pacino"]},
+    {"id": 13, "title": "Pulp Fiction", "year": "1994", "actors": ["John Travolta", "Samuel L. Jackson"]},
+    {"id": 14, "title": "Inception", "year": "2010", "actors": ["Leonardo DiCaprio", "Joseph Gordon-Levitt"]},
+    {"id": 15, "title": "The Dark Knight", "year": "2008", "actors": ["Christian Bale", "Heath Ledger"]},
+    {"id": 16, "title": "Forrest Gump", "year": "1994", "actors": ["Tom Hanks", "Robin Wright"]},
+    {"id": 17, "title": "The Matrix", "year": "1999", "actors": ["Keanu Reeves", "Laurence Fishburne"]},
+    {"id": 18, "title": "Titanic", "year": "1997", "actors": ["Leonardo DiCaprio", "Kate Winslet"]},
+    {"id": 19, "title": "Gladiator", "year": "2000", "actors": ["Russell Crowe", "Joaquin Phoenix"]},
+    {"id": 20, "title": "Parasite", "year": "2019", "actors": ["Choi Woo-shik", "Park So-dam"]}
+  ],
+  "locations": [
+    {
+      "user_id": "46fb",
+      "movie_id": 15
+    }
+  ]
+}

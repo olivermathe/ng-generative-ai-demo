@@ -7,10 +7,12 @@ import {
   HttpEventType,
   HttpResponse,
 } from '@angular/common/http';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 export interface Message {
   id: string;
   text: string;
+  safeHtml: SafeHtml,
   fromUser: boolean;
   generating?: boolean;
 }
@@ -28,6 +30,8 @@ export class MessageService {
   readonly messages = this._messages.asReadonly();
   readonly generatingInProgress = this._generatingInProgress.asReadonly();
 
+  constructor(private domSanitizer: DomSanitizer) {}
+
   sendMessage(prompt: string): void {
     this._generatingInProgress.set(true);
 
@@ -36,6 +40,7 @@ export class MessageService {
       {
         id: window.crypto.randomUUID(),
         text: prompt,
+        safeHtml: this.domSanitizer.bypassSecurityTrustHtml(prompt),
         fromUser: true,
       },
     ]);
@@ -74,12 +79,14 @@ export class MessageService {
               ? {
                   id,
                   text: (event as HttpDownloadProgressEvent).partialText!,
+                  safeHtml: this.domSanitizer.bypassSecurityTrustHtml((event as HttpDownloadProgressEvent).partialText!),
                   fromUser: false,
                   generating: true,
                 }
               : {
                   id,
                   text: (event as HttpResponse<string>).body!,
+                  safeHtml: this.domSanitizer.bypassSecurityTrustHtml((event as HttpResponse<string>).body!),
                   fromUser: false,
                   generating: false,
                 },
@@ -87,6 +94,7 @@ export class MessageService {
         startWith<Message>({
           id,
           text: '',
+          safeHtml: this.domSanitizer.bypassSecurityTrustHtml(''),
           fromUser: false,
           generating: true,
         }),
