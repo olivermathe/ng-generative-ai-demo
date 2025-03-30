@@ -1,0 +1,392 @@
+openapi: 3.0.0
+info:
+  title: API de Locadora de Filmes
+  description: API para gerenciamento de uma locadora de filmes, incluindo filmes, clientes e aluguéis.
+  version: 1.0.0
+  contact:
+    email: suporte@locadora.com
+
+servers:
+  - url: http://api.locadora.com/v1
+    description: Servidor principal
+
+paths:
+  /filmes:
+    get:
+      operationId: get_filmes
+      summary: Lista todos os filmes
+      description: Retorna uma lista de filmes disponíveis na locadora.
+      parameters:
+        - name: titulo
+          in: query
+          required: false
+          description: Título do filme para buscar no sistema
+          schema:
+            type: string
+        - name: ano
+          in: query
+          required: false
+          description: Ano de lançamento do filme para buscar no sistema
+          schema:
+            type: integer
+        - name: precoDiario
+          in: query
+          required: false
+          description: Preço diário atual do filme para ser alugado
+          schema:
+            type: number
+        - name: id
+          in: query
+          required: false
+          description: Identificador único do filme cadastrado no sistema
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Lista de filmes retornada com sucesso
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Filme'
+    post:
+      operationId: post_filmes
+      summary: Adiciona um novo filme
+      description: Cria um novo filme no catálogo da locadora.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FilmeInput'
+      responses:
+        '201':
+          description: Filme criado com sucesso
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Filme'
+        '400':
+          description: Dados inválidos
+
+  /filmes/{id}:
+    get:
+      operationId: get_filme
+      summary: Obtém detalhes de um filme
+      description: Retorna informações de um filme específico pelo ID.
+      parameters:
+        - name: id
+          in: path
+          description: 'sfdfsdfsdfsdf'
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Detalhes do filme retornados com sucesso
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Filme'
+        '404':
+          description: Filme não encontrado
+    put:
+      operationId: put_filme
+      summary: Atualiza um filme
+      description: Atualiza as informações de um filme existente.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FilmeInput'
+      responses:
+        '200':
+          description: Filme atualizado com sucesso
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Filme'
+        '404':
+          description: Filme não encontrado
+    delete:
+      operationId: delete_filme
+      summary: Remove um filme
+      description: Exclui um filme do catálogo.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '204':
+          description: Filme removido com sucesso
+        '404':
+          description: Filme não encontrado
+
+  /clientes:
+    get:
+      operationId: get_clientes
+      summary: Lista todos os clientes
+      description: Retorna os usuários cadastrados no sistema da locadora, pode ser usado com filtro ou sem o filtro para listar todos.
+      parameters:
+        - name: nome
+          in: query
+          required: false
+          description: Nome do usuário para buscar no sistema
+          schema:
+            type: string
+        - name: email
+          in: query
+          required: false
+          description: E-mail do usuário para buscar no sistema
+          schema:
+            type: string
+        - name: id
+          in: query
+          required: false
+          description: Identificador único do cliente cadastrado no sistema
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Lista de clientes retornada com sucesso
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Cliente'
+    post:
+      operationId: post_clientes
+      summary: Cadastra um novo cliente
+      description: Adiciona um novo cliente ao sistema.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ClienteInput'
+      responses:
+        '201':
+          description: Cliente criado com sucesso
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Cliente'
+
+  /alugueis:
+    get:
+      operationId: get_alugueis
+      summary: Lista todos os alugueis
+      description: Retorna os alugueis realizado pelos usuários cadastrados no sistema da locadora, pode ser usado com filtro ou sem o filtro para listar todos
+      parameters:
+        - name: id
+          in: query
+          required: false
+          description: Identificador único do filme cadastrado no sistema
+          schema:
+            type: integer
+        - name: clienteId
+          in: query
+          required: false
+          description: Identificador único do usuário que realizao o aluguel de filme
+          schema:
+            type: integer
+        - name: filmeId
+          in: query
+          required: false
+          description: Identificador único do filme que foi alugado
+          schema:
+            type: integer
+        - name: dataAluguel
+          in: query
+          required: false
+          description: Data em que foi realizado o aluguel
+          schema:
+            type: string
+        - name: dataDevolucaoPrevista
+          in: query
+          required: false
+          description: Data prevista para o cliente devolver o filme
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Lista de clientes retornada com sucesso
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Cliente'
+    post:
+      operationId: post_alugueis
+      summary: Registra um novo aluguel
+      description: Cria um novo registro de aluguel de filme para um cliente.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AluguelInput'
+      responses:
+        '201':
+          description: Aluguel registrado com sucesso
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Aluguel'
+        '400':
+          description: Dados inválidos ou filme indisponível
+
+components:
+  schemas:
+    Filme:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 1
+        titulo:
+          type: string
+          example: "O Poderoso Chefão"
+        genero:
+          type: string
+          example: "Drama"
+        ano:
+          type: integer
+          example: 1972
+        quantidadeDisponivel:
+          type: integer
+          example: 5
+      required:
+        - id
+        - titulo
+        - genero
+        - ano
+        - quantidadeDisponivel
+
+    FilmeInput:
+      type: object
+      properties:
+        titulo:
+          description: "description"
+          type: string
+          example: "O Poderoso Chefão"
+        genero:
+          description: "description"
+          type: string
+          example: "Drama"
+        ano:
+          description: "description"
+          type: integer
+          example: 1972
+        quantidadeDisponivel:
+          description: "description"
+          type: integer
+          example: 5
+      required:
+        - titulo
+        - genero
+        - ano
+        - quantidadeDisponivel
+
+    Cliente:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 1
+        nome:
+          type: string
+          example: "João Silva"
+        email:
+          type: string
+          example: "joao.silva@email.com"
+        telefone:
+          type: string
+          example: "11987654321"
+      required:
+        - id
+        - nome
+        - email
+
+    ClienteInput:
+      type: object
+      properties:
+        nome:
+          description: "description"
+          type: string
+          example: "João Silva"
+        email:
+          description: "description"
+          type: string
+          example: "joao.silva@email.com"
+        telefone:
+          description: "description"
+          type: string
+          example: "11987654321"
+      required:
+        - nome
+        - email
+
+    Aluguel:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 1
+        clienteId:
+          type: integer
+          example: 1
+        filmeId:
+          type: integer
+          example: 1
+        dataAluguel:
+          type: string
+          format: date
+          example: "2025-03-28"
+        dataDevolucao:
+          type: string
+          format: date
+          example: "2025-04-04"
+      required:
+        - id
+        - clienteId
+        - filmeId
+        - dataAluguel
+
+    AluguelInput:
+      type: object
+      properties:
+        clienteId:
+          description: "description"
+          type: integer
+          example: 1
+        filmeId:
+          description: "description"
+          type: integer
+          example: 1
+        dataAluguel:
+          description: "description"
+          type: string
+          format: date
+          example: "2025-03-28"
+        dataDevolucao:
+          description: "description"
+          type: string
+          format: date
+          example: "2025-04-04"
+      required:
+        - clienteId
+        - filmeId
+        - dataAluguel
