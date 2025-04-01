@@ -1,45 +1,2508 @@
 {
-  "users": [
+  "filmes": [
     {
-      "id": "1",
-      "username": "teste",
-      "password": "123",
-      "age": 20
+      "id": 1,
+      "titulo": "Aventura 1",
+      "genero": "Drama",
+      "ano": 1981,
+      "disponivel": false,
+      "precoDiario": 5.8
     },
     {
-      "id": "ca1d",
-      "username": "matheus",
-      "password": null,
-      "age": 20
+      "id": 2,
+      "titulo": "Drama 2",
+      "genero": "Drama",
+      "ano": 2012,
+      "disponivel": true,
+      "precoDiario": 4.78
     },
     {
-      "id": "46fb",
-      "username": "romeo",
-      "password": null,
-      "age": 15
+      "id": 3,
+      "titulo": "Filme 3",
+      "genero": "Ficção Científica",
+      "ano": 1972,
+      "disponivel": true,
+      "precoDiario": 4.05
     },
     {
-      "id": "34dd",
-      "username": "Noah",
-      "password": null
+      "id": 4,
+      "titulo": "Drama 4",
+      "genero": "Romance",
+      "ano": 2002,
+      "disponivel": false,
+      "precoDiario": 5.1
+    },
+    {
+      "id": 5,
+      "titulo": "Aventura 5",
+      "genero": "Ação",
+      "ano": 1973,
+      "disponivel": true,
+      "precoDiario": 5.75
+    },
+    {
+      "id": 6,
+      "titulo": "Drama 6",
+      "genero": "Romance",
+      "ano": 1976,
+      "disponivel": false,
+      "precoDiario": 4.64
+    },
+    {
+      "id": 7,
+      "titulo": "Drama 7",
+      "genero": "Ficção Científica",
+      "ano": 1993,
+      "disponivel": false,
+      "precoDiario": 4.23
+    },
+    {
+      "id": 8,
+      "titulo": "Drama 8",
+      "genero": "Terror",
+      "ano": 1997,
+      "disponivel": true,
+      "precoDiario": 6.71
+    },
+    {
+      "id": 9,
+      "titulo": "Mistério 9",
+      "genero": "Comédia",
+      "ano": 1979,
+      "disponivel": false,
+      "precoDiario": 5.61
+    },
+    {
+      "id": 10,
+      "titulo": "Filme 10",
+      "genero": "Terror",
+      "ano": 1982,
+      "disponivel": false,
+      "precoDiario": 6.62
+    },
+    {
+      "id": 11,
+      "titulo": "Filme 11",
+      "genero": "Comédia",
+      "ano": 2025,
+      "disponivel": true,
+      "precoDiario": 4.96
+    },
+    {
+      "id": 12,
+      "titulo": "Mistério 12",
+      "genero": "Animação",
+      "ano": 1983,
+      "disponivel": true,
+      "precoDiario": 4.57
+    },
+    {
+      "id": 13,
+      "titulo": "Comédia 13",
+      "genero": "Ação",
+      "ano": 2012,
+      "disponivel": false,
+      "precoDiario": 5.31
+    },
+    {
+      "id": 14,
+      "titulo": "Mistério 14",
+      "genero": "Terror",
+      "ano": 1980,
+      "disponivel": true,
+      "precoDiario": 6.69
+    },
+    {
+      "id": 15,
+      "titulo": "Filme 15",
+      "genero": "Terror",
+      "ano": 2015,
+      "disponivel": true,
+      "precoDiario": 5.8
+    },
+    {
+      "id": 16,
+      "titulo": "Comédia 16",
+      "genero": "Drama",
+      "ano": 1992,
+      "disponivel": false,
+      "precoDiario": 4.13
+    },
+    {
+      "id": 17,
+      "titulo": "Comédia 17",
+      "genero": "Romance",
+      "ano": 1993,
+      "disponivel": false,
+      "precoDiario": 6.35
+    },
+    {
+      "id": 18,
+      "titulo": "Drama 18",
+      "genero": "Animação",
+      "ano": 1999,
+      "disponivel": false,
+      "precoDiario": 6.91
+    },
+    {
+      "id": 19,
+      "titulo": "Drama 19",
+      "genero": "Ficção Científica",
+      "ano": 1973,
+      "disponivel": false,
+      "precoDiario": 4.82
+    },
+    {
+      "id": 20,
+      "titulo": "Aventura 20",
+      "genero": "Romance",
+      "ano": 1995,
+      "disponivel": true,
+      "precoDiario": 4.71
+    },
+    {
+      "id": 21,
+      "titulo": "Aventura 21",
+      "genero": "Ação",
+      "ano": 1992,
+      "disponivel": false,
+      "precoDiario": 6.46
+    },
+    {
+      "id": 22,
+      "titulo": "Filme 22",
+      "genero": "Animação",
+      "ano": 2002,
+      "disponivel": true,
+      "precoDiario": 5.2
+    },
+    {
+      "id": 23,
+      "titulo": "Mistério 23",
+      "genero": "Ficção Científica",
+      "ano": 1988,
+      "disponivel": true,
+      "precoDiario": 6.8
+    },
+    {
+      "id": 24,
+      "titulo": "Mistério 24",
+      "genero": "Terror",
+      "ano": 2015,
+      "disponivel": true,
+      "precoDiario": 5.33
+    },
+    {
+      "id": 25,
+      "titulo": "Filme 25",
+      "genero": "Ficção Científica",
+      "ano": 1998,
+      "disponivel": true,
+      "precoDiario": 6.3
+    },
+    {
+      "id": 26,
+      "titulo": "Drama 26",
+      "genero": "Animação",
+      "ano": 2007,
+      "disponivel": true,
+      "precoDiario": 6.48
+    },
+    {
+      "id": 27,
+      "titulo": "Filme 27",
+      "genero": "Ação",
+      "ano": 1976,
+      "disponivel": false,
+      "precoDiario": 4.12
+    },
+    {
+      "id": 28,
+      "titulo": "Aventura 28",
+      "genero": "Ação",
+      "ano": 2007,
+      "disponivel": false,
+      "precoDiario": 4.26
+    },
+    {
+      "id": 29,
+      "titulo": "Comédia 29",
+      "genero": "Drama",
+      "ano": 1999,
+      "disponivel": false,
+      "precoDiario": 4.21
+    },
+    {
+      "id": 30,
+      "titulo": "Filme 30",
+      "genero": "Romance",
+      "ano": 2013,
+      "disponivel": true,
+      "precoDiario": 5.33
+    },
+    {
+      "id": 31,
+      "titulo": "Drama 31",
+      "genero": "Terror",
+      "ano": 2007,
+      "disponivel": true,
+      "precoDiario": 4.35
+    },
+    {
+      "id": 32,
+      "titulo": "Aventura 32",
+      "genero": "Ação",
+      "ano": 2020,
+      "disponivel": true,
+      "precoDiario": 4.92
+    },
+    {
+      "id": 33,
+      "titulo": "Comédia 33",
+      "genero": "Terror",
+      "ano": 2020,
+      "disponivel": false,
+      "precoDiario": 4.37
+    },
+    {
+      "id": 34,
+      "titulo": "Aventura 34",
+      "genero": "Terror",
+      "ano": 2014,
+      "disponivel": true,
+      "precoDiario": 4.75
+    },
+    {
+      "id": 35,
+      "titulo": "Mistério 35",
+      "genero": "Drama",
+      "ano": 2020,
+      "disponivel": true,
+      "precoDiario": 6.89
+    },
+    {
+      "id": 36,
+      "titulo": "Aventura 36",
+      "genero": "Comédia",
+      "ano": 1974,
+      "disponivel": true,
+      "precoDiario": 5.78
+    },
+    {
+      "id": 37,
+      "titulo": "Aventura 37",
+      "genero": "Animação",
+      "ano": 1979,
+      "disponivel": true,
+      "precoDiario": 6.59
+    },
+    {
+      "id": 38,
+      "titulo": "Mistério 38",
+      "genero": "Animação",
+      "ano": 1984,
+      "disponivel": true,
+      "precoDiario": 4.8
+    },
+    {
+      "id": 39,
+      "titulo": "Comédia 39",
+      "genero": "Romance",
+      "ano": 1989,
+      "disponivel": true,
+      "precoDiario": 4.39
+    },
+    {
+      "id": 40,
+      "titulo": "Filme 40",
+      "genero": "Drama",
+      "ano": 2012,
+      "disponivel": false,
+      "precoDiario": 4.38
+    },
+    {
+      "id": 41,
+      "titulo": "Mistério 41",
+      "genero": "Romance",
+      "ano": 2009,
+      "disponivel": false,
+      "precoDiario": 5.14
+    },
+    {
+      "id": 42,
+      "titulo": "Aventura 42",
+      "genero": "Romance",
+      "ano": 1988,
+      "disponivel": true,
+      "precoDiario": 5.72
+    },
+    {
+      "id": 43,
+      "titulo": "Filme 43",
+      "genero": "Romance",
+      "ano": 2006,
+      "disponivel": true,
+      "precoDiario": 4.98
+    },
+    {
+      "id": 44,
+      "titulo": "Mistério 44",
+      "genero": "Terror",
+      "ano": 1973,
+      "disponivel": true,
+      "precoDiario": 6.82
+    },
+    {
+      "id": 45,
+      "titulo": "Comédia 45",
+      "genero": "Romance",
+      "ano": 2021,
+      "disponivel": true,
+      "precoDiario": 5.41
+    },
+    {
+      "id": 46,
+      "titulo": "Aventura 46",
+      "genero": "Ficção Científica",
+      "ano": 2014,
+      "disponivel": true,
+      "precoDiario": 5.35
+    },
+    {
+      "id": 47,
+      "titulo": "Filme 47",
+      "genero": "Animação",
+      "ano": 2003,
+      "disponivel": true,
+      "precoDiario": 5.06
+    },
+    {
+      "id": 48,
+      "titulo": "Aventura 48",
+      "genero": "Animação",
+      "ano": 1977,
+      "disponivel": true,
+      "precoDiario": 5.77
+    },
+    {
+      "id": 49,
+      "titulo": "Drama 49",
+      "genero": "Animação",
+      "ano": 2020,
+      "disponivel": true,
+      "precoDiario": 5.59
+    },
+    {
+      "id": 50,
+      "titulo": "Mistério 50",
+      "genero": "Animação",
+      "ano": 2019,
+      "disponivel": true,
+      "precoDiario": 6.16
+    },
+    {
+      "id": 51,
+      "titulo": "Filme 51",
+      "genero": "Drama",
+      "ano": 1971,
+      "disponivel": true,
+      "precoDiario": 5.64
+    },
+    {
+      "id": 52,
+      "titulo": "Aventura 52",
+      "genero": "Terror",
+      "ano": 2017,
+      "disponivel": true,
+      "precoDiario": 5.06
+    },
+    {
+      "id": 53,
+      "titulo": "Filme 53",
+      "genero": "Terror",
+      "ano": 2003,
+      "disponivel": true,
+      "precoDiario": 5.41
+    },
+    {
+      "id": 54,
+      "titulo": "Aventura 54",
+      "genero": "Animação",
+      "ano": 2004,
+      "disponivel": true,
+      "precoDiario": 6.37
+    },
+    {
+      "id": 55,
+      "titulo": "Filme 55",
+      "genero": "Comédia",
+      "ano": 2014,
+      "disponivel": true,
+      "precoDiario": 5.83
+    },
+    {
+      "id": 56,
+      "titulo": "Comédia 56",
+      "genero": "Ação",
+      "ano": 1995,
+      "disponivel": true,
+      "precoDiario": 4.29
+    },
+    {
+      "id": 57,
+      "titulo": "Filme 57",
+      "genero": "Animação",
+      "ano": 1972,
+      "disponivel": true,
+      "precoDiario": 6.55
+    },
+    {
+      "id": 58,
+      "titulo": "Mistério 58",
+      "genero": "Drama",
+      "ano": 1992,
+      "disponivel": true,
+      "precoDiario": 4.14
+    },
+    {
+      "id": 59,
+      "titulo": "Filme 59",
+      "genero": "Ficção Científica",
+      "ano": 2011,
+      "disponivel": true,
+      "precoDiario": 6.12
+    },
+    {
+      "id": 60,
+      "titulo": "Mistério 60",
+      "genero": "Animação",
+      "ano": 1999,
+      "disponivel": true,
+      "precoDiario": 6.41
+    },
+    {
+      "id": 61,
+      "titulo": "Filme 61",
+      "genero": "Ficção Científica",
+      "ano": 1989,
+      "disponivel": false,
+      "precoDiario": 4.55
+    },
+    {
+      "id": 62,
+      "titulo": "Filme 62",
+      "genero": "Drama",
+      "ano": 1975,
+      "disponivel": true,
+      "precoDiario": 4.27
+    },
+    {
+      "id": 63,
+      "titulo": "Mistério 63",
+      "genero": "Comédia",
+      "ano": 2019,
+      "disponivel": true,
+      "precoDiario": 5.27
+    },
+    {
+      "id": 64,
+      "titulo": "Filme 64",
+      "genero": "Ação",
+      "ano": 2007,
+      "disponivel": true,
+      "precoDiario": 5.63
+    },
+    {
+      "id": 65,
+      "titulo": "Filme 65",
+      "genero": "Animação",
+      "ano": 2022,
+      "disponivel": true,
+      "precoDiario": 6.83
+    },
+    {
+      "id": 66,
+      "titulo": "Mistério 66",
+      "genero": "Romance",
+      "ano": 2023,
+      "disponivel": false,
+      "precoDiario": 5.1
+    },
+    {
+      "id": 67,
+      "titulo": "Comédia 67",
+      "genero": "Comédia",
+      "ano": 1985,
+      "disponivel": true,
+      "precoDiario": 4.92
+    },
+    {
+      "id": 68,
+      "titulo": "Mistério 68",
+      "genero": "Animação",
+      "ano": 2017,
+      "disponivel": true,
+      "precoDiario": 4.34
+    },
+    {
+      "id": 69,
+      "titulo": "Filme 69",
+      "genero": "Drama",
+      "ano": 1991,
+      "disponivel": true,
+      "precoDiario": 4.12
+    },
+    {
+      "id": 70,
+      "titulo": "Drama 70",
+      "genero": "Terror",
+      "ano": 1980,
+      "disponivel": true,
+      "precoDiario": 5.7
+    },
+    {
+      "id": 71,
+      "titulo": "Aventura 71",
+      "genero": "Animação",
+      "ano": 1970,
+      "disponivel": false,
+      "precoDiario": 4.84
+    },
+    {
+      "id": 72,
+      "titulo": "Comédia 72",
+      "genero": "Terror",
+      "ano": 2024,
+      "disponivel": true,
+      "precoDiario": 5.12
+    },
+    {
+      "id": 73,
+      "titulo": "Aventura 73",
+      "genero": "Animação",
+      "ano": 1987,
+      "disponivel": true,
+      "precoDiario": 6.27
+    },
+    {
+      "id": 74,
+      "titulo": "Mistério 74",
+      "genero": "Comédia",
+      "ano": 1996,
+      "disponivel": false,
+      "precoDiario": 5.35
+    },
+    {
+      "id": 75,
+      "titulo": "Drama 75",
+      "genero": "Drama",
+      "ano": 1978,
+      "disponivel": true,
+      "precoDiario": 6.84
+    },
+    {
+      "id": 76,
+      "titulo": "Drama 76",
+      "genero": "Comédia",
+      "ano": 2013,
+      "disponivel": false,
+      "precoDiario": 6.66
+    },
+    {
+      "id": 77,
+      "titulo": "Comédia 77",
+      "genero": "Ficção Científica",
+      "ano": 1975,
+      "disponivel": true,
+      "precoDiario": 5.67
+    },
+    {
+      "id": 78,
+      "titulo": "Mistério 78",
+      "genero": "Drama",
+      "ano": 2007,
+      "disponivel": true,
+      "precoDiario": 4.55
+    },
+    {
+      "id": 79,
+      "titulo": "Aventura 79",
+      "genero": "Romance",
+      "ano": 1974,
+      "disponivel": true,
+      "precoDiario": 5.39
+    },
+    {
+      "id": 80,
+      "titulo": "Comédia 80",
+      "genero": "Ficção Científica",
+      "ano": 2021,
+      "disponivel": true,
+      "precoDiario": 6.2
+    },
+    {
+      "id": 81,
+      "titulo": "Mistério 81",
+      "genero": "Animação",
+      "ano": 2014,
+      "disponivel": true,
+      "precoDiario": 6.22
+    },
+    {
+      "id": 82,
+      "titulo": "Filme 82",
+      "genero": "Ação",
+      "ano": 2005,
+      "disponivel": true,
+      "precoDiario": 4.78
+    },
+    {
+      "id": 83,
+      "titulo": "Comédia 83",
+      "genero": "Romance",
+      "ano": 1979,
+      "disponivel": true,
+      "precoDiario": 6.5
+    },
+    {
+      "id": 84,
+      "titulo": "Aventura 84",
+      "genero": "Animação",
+      "ano": 1992,
+      "disponivel": true,
+      "precoDiario": 4.29
+    },
+    {
+      "id": 85,
+      "titulo": "Aventura 85",
+      "genero": "Ficção Científica",
+      "ano": 2001,
+      "disponivel": true,
+      "precoDiario": 4.4
+    },
+    {
+      "id": 86,
+      "titulo": "Aventura 86",
+      "genero": "Animação",
+      "ano": 1988,
+      "disponivel": true,
+      "precoDiario": 6.5
+    },
+    {
+      "id": 87,
+      "titulo": "Mistério 87",
+      "genero": "Drama",
+      "ano": 2000,
+      "disponivel": true,
+      "precoDiario": 4.09
+    },
+    {
+      "id": 88,
+      "titulo": "Mistério 88",
+      "genero": "Ação",
+      "ano": 2024,
+      "disponivel": true,
+      "precoDiario": 5.74
+    },
+    {
+      "id": 89,
+      "titulo": "Aventura 89",
+      "genero": "Ficção Científica",
+      "ano": 1983,
+      "disponivel": false,
+      "precoDiario": 5.68
+    },
+    {
+      "id": 90,
+      "titulo": "Aventura 90",
+      "genero": "Comédia",
+      "ano": 1990,
+      "disponivel": true,
+      "precoDiario": 6.99
+    },
+    {
+      "id": 91,
+      "titulo": "Drama 91",
+      "genero": "Terror",
+      "ano": 1992,
+      "disponivel": true,
+      "precoDiario": 4.74
+    },
+    {
+      "id": 92,
+      "titulo": "Filme 92",
+      "genero": "Animação",
+      "ano": 1991,
+      "disponivel": true,
+      "precoDiario": 5.51
+    },
+    {
+      "id": 93,
+      "titulo": "Drama 93",
+      "genero": "Terror",
+      "ano": 2008,
+      "disponivel": false,
+      "precoDiario": 6.02
+    },
+    {
+      "id": 94,
+      "titulo": "Mistério 94",
+      "genero": "Animação",
+      "ano": 2002,
+      "disponivel": false,
+      "precoDiario": 6.69
+    },
+    {
+      "id": 95,
+      "titulo": "Aventura 95",
+      "genero": "Drama",
+      "ano": 2023,
+      "disponivel": true,
+      "precoDiario": 6.04
+    },
+    {
+      "id": 96,
+      "titulo": "Filme 96",
+      "genero": "Comédia",
+      "ano": 1997,
+      "disponivel": true,
+      "precoDiario": 4.44
+    },
+    {
+      "id": 97,
+      "titulo": "Filme 97",
+      "genero": "Terror",
+      "ano": 2009,
+      "disponivel": true,
+      "precoDiario": 6.02
+    },
+    {
+      "id": 98,
+      "titulo": "Mistério 98",
+      "genero": "Ação",
+      "ano": 2002,
+      "disponivel": true,
+      "precoDiario": 6.75
+    },
+    {
+      "id": 99,
+      "titulo": "Filme 99",
+      "genero": "Terror",
+      "ano": 1983,
+      "disponivel": true,
+      "precoDiario": 6.34
+    },
+    {
+      "id": 100,
+      "titulo": "Aventura 100",
+      "genero": "Romance",
+      "ano": 2000,
+      "disponivel": false,
+      "precoDiario": 6.31
     }
   ],
-  "movies": [
-    {"id": 11, "title": "The Shawshank Redemption", "year": "1994", "actors": ["Tim Robbins", "Morgan Freeman"]},
-    {"id": 12, "title": "The Godfather", "year": "1972", "actors": ["Marlon Brando", "Al Pacino"]},
-    {"id": 13, "title": "Pulp Fiction", "year": "1994", "actors": ["John Travolta", "Samuel L. Jackson"]},
-    {"id": 14, "title": "Inception", "year": "2010", "actors": ["Leonardo DiCaprio", "Joseph Gordon-Levitt"]},
-    {"id": 15, "title": "The Dark Knight", "year": "2008", "actors": ["Christian Bale", "Heath Ledger"]},
-    {"id": 16, "title": "Forrest Gump", "year": "1994", "actors": ["Tom Hanks", "Robin Wright"]},
-    {"id": 17, "title": "The Matrix", "year": "1999", "actors": ["Keanu Reeves", "Laurence Fishburne"]},
-    {"id": 18, "title": "Titanic", "year": "1997", "actors": ["Leonardo DiCaprio", "Kate Winslet"]},
-    {"id": 19, "title": "Gladiator", "year": "2000", "actors": ["Russell Crowe", "Joaquin Phoenix"]},
-    {"id": 20, "title": "Parasite", "year": "2019", "actors": ["Choi Woo-shik", "Park So-dam"]}
-  ],
-  "locations": [
+  "clientes": [
     {
-      "user_id": "46fb",
-      "movie_id": 15
+      "id": 1,
+      "nome": "Gabriel Souza",
+      "email": "gabriel.souza@email.com",
+      "telefone": "(32) 944171-4017",
+      "dataCadastro": "2025-02-04"
+    },
+    {
+      "id": 2,
+      "nome": "Clara Santos",
+      "email": "clara.santos@email.com",
+      "telefone": "(85) 937087-3396",
+      "dataCadastro": "2024-07-15"
+    },
+    {
+      "id": 3,
+      "nome": "Maria Silva",
+      "email": "maria.silva@email.com",
+      "telefone": "(95) 960914-5492",
+      "dataCadastro": "2024-06-27"
+    },
+    {
+      "id": 4,
+      "nome": "João Silva",
+      "email": "joão.silva@email.com",
+      "telefone": "(39) 972018-0237",
+      "dataCadastro": "2024-07-30"
+    },
+    {
+      "id": 5,
+      "nome": "Beatriz Rocha",
+      "email": "beatriz.rocha@email.com",
+      "telefone": "(85) 912454-6779",
+      "dataCadastro": "2024-06-26"
+    },
+    {
+      "id": 6,
+      "nome": "Beatriz Silva",
+      "email": "beatriz.silva@email.com",
+      "telefone": "(20) 987882-7309",
+      "dataCadastro": "2024-09-08"
+    },
+    {
+      "id": 7,
+      "nome": "Clara Souza",
+      "email": "clara.souza@email.com",
+      "telefone": "(34) 986783-1124",
+      "dataCadastro": "2024-11-15"
+    },
+    {
+      "id": 8,
+      "nome": "Lucas Mendes",
+      "email": "lucas.mendes@email.com",
+      "telefone": "(37) 967773-4206",
+      "dataCadastro": "2024-06-07"
+    },
+    {
+      "id": 9,
+      "nome": "Rafael Mendes",
+      "email": "rafael.mendes@email.com",
+      "telefone": "(91) 946811-1014",
+      "dataCadastro": "2024-02-15"
+    },
+    {
+      "id": 10,
+      "nome": "Rafael Silva",
+      "email": "rafael.silva@email.com",
+      "telefone": "(27) 910077-8084",
+      "dataCadastro": "2024-08-24"
+    },
+    {
+      "id": 11,
+      "nome": "Ana Rocha",
+      "email": "ana.rocha@email.com",
+      "telefone": "(90) 950524-6097",
+      "dataCadastro": "2024-11-10"
+    },
+    {
+      "id": 12,
+      "nome": "Pedro Pereira",
+      "email": "pedro.pereira@email.com",
+      "telefone": "(30) 960799-0475",
+      "dataCadastro": "2024-07-16"
+    },
+    {
+      "id": 13,
+      "nome": "João Souza",
+      "email": "joão.souza@email.com",
+      "telefone": "(67) 975563-4453",
+      "dataCadastro": "2024-08-30"
+    },
+    {
+      "id": 14,
+      "nome": "Rafael Souza",
+      "email": "rafael.souza@email.com",
+      "telefone": "(31) 948022-8351",
+      "dataCadastro": "2024-09-02"
+    },
+    {
+      "id": 15,
+      "nome": "Gabriel Costa",
+      "email": "gabriel.costa@email.com",
+      "telefone": "(68) 924340-9219",
+      "dataCadastro": "2025-03-12"
+    },
+    {
+      "id": 16,
+      "nome": "João Rocha",
+      "email": "joão.rocha@email.com",
+      "telefone": "(25) 939773-8584",
+      "dataCadastro": "2024-07-20"
+    },
+    {
+      "id": 17,
+      "nome": "Maria Souza",
+      "email": "maria.souza@email.com",
+      "telefone": "(44) 950856-3121",
+      "dataCadastro": "2024-10-08"
+    },
+    {
+      "id": 18,
+      "nome": "Gabriel Rocha",
+      "email": "gabriel.rocha@email.com",
+      "telefone": "(21) 927454-7869",
+      "dataCadastro": "2024-08-21"
+    },
+    {
+      "id": 19,
+      "nome": "Juliana Silva",
+      "email": "juliana.silva@email.com",
+      "telefone": "(25) 953389-4051",
+      "dataCadastro": "2024-09-10"
+    },
+    {
+      "id": 20,
+      "nome": "Lucas Almeida",
+      "email": "lucas.almeida@email.com",
+      "telefone": "(88) 935713-8276",
+      "dataCadastro": "2024-09-22"
+    },
+    {
+      "id": 21,
+      "nome": "Gabriel Lima",
+      "email": "gabriel.lima@email.com",
+      "telefone": "(45) 947443-6509",
+      "dataCadastro": "2024-01-23"
+    },
+    {
+      "id": 22,
+      "nome": "Gabriel Costa",
+      "email": "gabriel.costa@email.com",
+      "telefone": "(51) 922458-7932",
+      "dataCadastro": "2024-04-08"
+    },
+    {
+      "id": 23,
+      "nome": "Beatriz Souza",
+      "email": "beatriz.souza@email.com",
+      "telefone": "(39) 992100-5852",
+      "dataCadastro": "2024-10-27"
+    },
+    {
+      "id": 24,
+      "nome": "Rafael Mendes",
+      "email": "rafael.mendes@email.com",
+      "telefone": "(55) 913152-5953",
+      "dataCadastro": "2025-01-20"
+    },
+    {
+      "id": 25,
+      "nome": "Lucas Mendes",
+      "email": "lucas.mendes@email.com",
+      "telefone": "(38) 971793-1703",
+      "dataCadastro": "2024-05-19"
+    },
+    {
+      "id": 26,
+      "nome": "Juliana Pereira",
+      "email": "juliana.pereira@email.com",
+      "telefone": "(78) 964901-1076",
+      "dataCadastro": "2025-02-14"
+    },
+    {
+      "id": 27,
+      "nome": "Rafael Mendes",
+      "email": "rafael.mendes@email.com",
+      "telefone": "(39) 938210-7894",
+      "dataCadastro": "2024-12-15"
+    },
+    {
+      "id": 28,
+      "nome": "Beatriz Santos",
+      "email": "beatriz.santos@email.com",
+      "telefone": "(53) 990515-5656",
+      "dataCadastro": "2024-06-11"
+    },
+    {
+      "id": 29,
+      "nome": "Rafael Lima",
+      "email": "rafael.lima@email.com",
+      "telefone": "(94) 933423-9984",
+      "dataCadastro": "2024-02-11"
+    },
+    {
+      "id": 30,
+      "nome": "Rafael Souza",
+      "email": "rafael.souza@email.com",
+      "telefone": "(64) 998712-2951",
+      "dataCadastro": "2024-07-07"
+    },
+    {
+      "id": 31,
+      "nome": "Juliana Almeida",
+      "email": "juliana.almeida@email.com",
+      "telefone": "(71) 920481-2654",
+      "dataCadastro": "2024-11-27"
+    },
+    {
+      "id": 32,
+      "nome": "Rafael Souza",
+      "email": "rafael.souza@email.com",
+      "telefone": "(42) 924649-2398",
+      "dataCadastro": "2025-01-10"
+    },
+    {
+      "id": 33,
+      "nome": "Ana Mendes",
+      "email": "ana.mendes@email.com",
+      "telefone": "(37) 955200-7271",
+      "dataCadastro": "2024-09-06"
+    },
+    {
+      "id": 34,
+      "nome": "João Rocha",
+      "email": "joão.rocha@email.com",
+      "telefone": "(60) 927371-5072",
+      "dataCadastro": "2024-08-02"
+    },
+    {
+      "id": 35,
+      "nome": "Rafael Pereira",
+      "email": "rafael.pereira@email.com",
+      "telefone": "(87) 969077-3521",
+      "dataCadastro": "2025-03-17"
+    },
+    {
+      "id": 36,
+      "nome": "Ana Oliveira",
+      "email": "ana.oliveira@email.com",
+      "telefone": "(69) 957728-7614",
+      "dataCadastro": "2024-06-03"
+    },
+    {
+      "id": 37,
+      "nome": "João Santos",
+      "email": "joão.santos@email.com",
+      "telefone": "(88) 945387-4422",
+      "dataCadastro": "2024-02-17"
+    },
+    {
+      "id": 38,
+      "nome": "Clara Oliveira",
+      "email": "clara.oliveira@email.com",
+      "telefone": "(25) 999768-2156",
+      "dataCadastro": "2024-09-03"
+    },
+    {
+      "id": 39,
+      "nome": "Gabriel Silva",
+      "email": "gabriel.silva@email.com",
+      "telefone": "(14) 933791-9969",
+      "dataCadastro": "2024-01-31"
+    },
+    {
+      "id": 40,
+      "nome": "Lucas Costa",
+      "email": "lucas.costa@email.com",
+      "telefone": "(58) 959794-0319",
+      "dataCadastro": "2024-10-14"
+    },
+    {
+      "id": 41,
+      "nome": "Beatriz Almeida",
+      "email": "beatriz.almeida@email.com",
+      "telefone": "(74) 982627-0092",
+      "dataCadastro": "2024-08-06"
+    },
+    {
+      "id": 42,
+      "nome": "João Souza",
+      "email": "joão.souza@email.com",
+      "telefone": "(16) 965022-2935",
+      "dataCadastro": "2025-03-06"
+    },
+    {
+      "id": 43,
+      "nome": "Lucas Silva",
+      "email": "lucas.silva@email.com",
+      "telefone": "(92) 916670-8351",
+      "dataCadastro": "2024-04-21"
+    },
+    {
+      "id": 44,
+      "nome": "Juliana Silva",
+      "email": "juliana.silva@email.com",
+      "telefone": "(45) 987394-0497",
+      "dataCadastro": "2024-07-09"
+    },
+    {
+      "id": 45,
+      "nome": "Rafael Almeida",
+      "email": "rafael.almeida@email.com",
+      "telefone": "(11) 958879-0835",
+      "dataCadastro": "2025-03-22"
+    },
+    {
+      "id": 46,
+      "nome": "Gabriel Almeida",
+      "email": "gabriel.almeida@email.com",
+      "telefone": "(77) 966407-0087",
+      "dataCadastro": "2024-12-15"
+    },
+    {
+      "id": 47,
+      "nome": "Maria Silva",
+      "email": "maria.silva@email.com",
+      "telefone": "(86) 985227-0949",
+      "dataCadastro": "2025-03-07"
+    },
+    {
+      "id": 48,
+      "nome": "Ana Silva",
+      "email": "ana.silva@email.com",
+      "telefone": "(39) 934109-8507",
+      "dataCadastro": "2024-06-04"
+    },
+    {
+      "id": 49,
+      "nome": "Gabriel Lima",
+      "email": "gabriel.lima@email.com",
+      "telefone": "(88) 919432-7787",
+      "dataCadastro": "2024-11-15"
+    },
+    {
+      "id": 50,
+      "nome": "Maria Oliveira",
+      "email": "maria.oliveira@email.com",
+      "telefone": "(91) 921490-1797",
+      "dataCadastro": "2024-04-09"
+    },
+    {
+      "id": 51,
+      "nome": "João Mendes",
+      "email": "joão.mendes@email.com",
+      "telefone": "(45) 973581-9166",
+      "dataCadastro": "2024-09-15"
+    },
+    {
+      "id": 52,
+      "nome": "Juliana Souza",
+      "email": "juliana.souza@email.com",
+      "telefone": "(72) 938326-7886",
+      "dataCadastro": "2024-03-07"
+    },
+    {
+      "id": 53,
+      "nome": "Rafael Mendes",
+      "email": "rafael.mendes@email.com",
+      "telefone": "(46) 944102-7772",
+      "dataCadastro": "2024-02-21"
+    },
+    {
+      "id": 54,
+      "nome": "Lucas Silva",
+      "email": "lucas.silva@email.com",
+      "telefone": "(22) 953912-2588",
+      "dataCadastro": "2024-11-26"
+    },
+    {
+      "id": 55,
+      "nome": "Rafael Almeida",
+      "email": "rafael.almeida@email.com",
+      "telefone": "(17) 952968-7758",
+      "dataCadastro": "2024-12-28"
+    },
+    {
+      "id": 56,
+      "nome": "Clara Costa",
+      "email": "clara.costa@email.com",
+      "telefone": "(97) 940463-4283",
+      "dataCadastro": "2025-01-21"
+    },
+    {
+      "id": 57,
+      "nome": "Pedro Oliveira",
+      "email": "pedro.oliveira@email.com",
+      "telefone": "(87) 910849-7325",
+      "dataCadastro": "2024-07-26"
+    },
+    {
+      "id": 58,
+      "nome": "Maria Silva",
+      "email": "maria.silva@email.com",
+      "telefone": "(10) 968431-6543",
+      "dataCadastro": "2024-06-29"
+    },
+    {
+      "id": 59,
+      "nome": "Lucas Souza",
+      "email": "lucas.souza@email.com",
+      "telefone": "(60) 941494-2802",
+      "dataCadastro": "2024-03-21"
+    },
+    {
+      "id": 60,
+      "nome": "Pedro Oliveira",
+      "email": "pedro.oliveira@email.com",
+      "telefone": "(62) 921758-6673",
+      "dataCadastro": "2024-01-19"
+    },
+    {
+      "id": 61,
+      "nome": "Juliana Santos",
+      "email": "juliana.santos@email.com",
+      "telefone": "(53) 967553-0382",
+      "dataCadastro": "2025-03-11"
+    },
+    {
+      "id": 62,
+      "nome": "Gabriel Lima",
+      "email": "gabriel.lima@email.com",
+      "telefone": "(88) 996891-9807",
+      "dataCadastro": "2024-09-12"
+    },
+    {
+      "id": 63,
+      "nome": "João Oliveira",
+      "email": "joão.oliveira@email.com",
+      "telefone": "(31) 998593-5781",
+      "dataCadastro": "2024-04-29"
+    },
+    {
+      "id": 64,
+      "nome": "Maria Oliveira",
+      "email": "maria.oliveira@email.com",
+      "telefone": "(28) 933517-4666",
+      "dataCadastro": "2024-08-02"
+    },
+    {
+      "id": 65,
+      "nome": "Juliana Mendes",
+      "email": "juliana.mendes@email.com",
+      "telefone": "(62) 975585-8384",
+      "dataCadastro": "2024-12-14"
+    },
+    {
+      "id": 66,
+      "nome": "Maria Almeida",
+      "email": "maria.almeida@email.com",
+      "telefone": "(90) 920272-2549",
+      "dataCadastro": "2024-08-21"
+    },
+    {
+      "id": 67,
+      "nome": "João Oliveira",
+      "email": "joão.oliveira@email.com",
+      "telefone": "(21) 960267-1962",
+      "dataCadastro": "2025-01-28"
+    },
+    {
+      "id": 68,
+      "nome": "João Costa",
+      "email": "joão.costa@email.com",
+      "telefone": "(40) 953834-3996",
+      "dataCadastro": "2024-09-12"
+    },
+    {
+      "id": 69,
+      "nome": "Rafael Oliveira",
+      "email": "rafael.oliveira@email.com",
+      "telefone": "(89) 951336-8598",
+      "dataCadastro": "2024-08-15"
+    },
+    {
+      "id": 70,
+      "nome": "Beatriz Oliveira",
+      "email": "beatriz.oliveira@email.com",
+      "telefone": "(87) 973912-2039",
+      "dataCadastro": "2024-09-26"
+    },
+    {
+      "id": 71,
+      "nome": "Lucas Santos",
+      "email": "lucas.santos@email.com",
+      "telefone": "(29) 991639-1125",
+      "dataCadastro": "2024-02-08"
+    },
+    {
+      "id": 72,
+      "nome": "Juliana Mendes",
+      "email": "juliana.mendes@email.com",
+      "telefone": "(24) 993378-9790",
+      "dataCadastro": "2024-04-27"
+    },
+    {
+      "id": 73,
+      "nome": "Clara Almeida",
+      "email": "clara.almeida@email.com",
+      "telefone": "(19) 919709-7054",
+      "dataCadastro": "2025-02-02"
+    },
+    {
+      "id": 74,
+      "nome": "Juliana Silva",
+      "email": "juliana.silva@email.com",
+      "telefone": "(33) 919760-2588",
+      "dataCadastro": "2024-01-27"
+    },
+    {
+      "id": 75,
+      "nome": "Rafael Santos",
+      "email": "rafael.santos@email.com",
+      "telefone": "(31) 938580-4829",
+      "dataCadastro": "2024-07-10"
+    },
+    {
+      "id": 76,
+      "nome": "Lucas Silva",
+      "email": "lucas.silva@email.com",
+      "telefone": "(78) 951559-3215",
+      "dataCadastro": "2024-08-15"
+    },
+    {
+      "id": 77,
+      "nome": "Clara Santos",
+      "email": "clara.santos@email.com",
+      "telefone": "(91) 977111-5180",
+      "dataCadastro": "2024-04-18"
+    },
+    {
+      "id": 78,
+      "nome": "Pedro Santos",
+      "email": "pedro.santos@email.com",
+      "telefone": "(33) 931993-8541",
+      "dataCadastro": "2024-02-04"
+    },
+    {
+      "id": 79,
+      "nome": "Rafael Almeida",
+      "email": "rafael.almeida@email.com",
+      "telefone": "(14) 944190-7743",
+      "dataCadastro": "2024-11-04"
+    },
+    {
+      "id": 80,
+      "nome": "Maria Pereira",
+      "email": "maria.pereira@email.com",
+      "telefone": "(90) 985339-7119",
+      "dataCadastro": "2024-10-16"
+    },
+    {
+      "id": 81,
+      "nome": "Lucas Pereira",
+      "email": "lucas.pereira@email.com",
+      "telefone": "(95) 975110-7214",
+      "dataCadastro": "2024-07-07"
+    },
+    {
+      "id": 82,
+      "nome": "Maria Costa",
+      "email": "maria.costa@email.com",
+      "telefone": "(96) 923608-1190",
+      "dataCadastro": "2025-03-09"
+    },
+    {
+      "id": 83,
+      "nome": "Gabriel Lima",
+      "email": "gabriel.lima@email.com",
+      "telefone": "(69) 951331-7994",
+      "dataCadastro": "2024-11-17"
+    },
+    {
+      "id": 84,
+      "nome": "Ana Rocha",
+      "email": "ana.rocha@email.com",
+      "telefone": "(95) 952025-3735",
+      "dataCadastro": "2024-08-10"
+    },
+    {
+      "id": 85,
+      "nome": "Ana Souza",
+      "email": "ana.souza@email.com",
+      "telefone": "(78) 949118-8260",
+      "dataCadastro": "2024-08-03"
+    },
+    {
+      "id": 86,
+      "nome": "Maria Pereira",
+      "email": "maria.pereira@email.com",
+      "telefone": "(46) 970373-3320",
+      "dataCadastro": "2024-04-28"
+    },
+    {
+      "id": 87,
+      "nome": "Juliana Silva",
+      "email": "juliana.silva@email.com",
+      "telefone": "(77) 984839-6039",
+      "dataCadastro": "2024-06-01"
+    },
+    {
+      "id": 88,
+      "nome": "Clara Oliveira",
+      "email": "clara.oliveira@email.com",
+      "telefone": "(35) 948541-4849",
+      "dataCadastro": "2025-02-20"
+    },
+    {
+      "id": 89,
+      "nome": "Lucas Souza",
+      "email": "lucas.souza@email.com",
+      "telefone": "(84) 993723-0255",
+      "dataCadastro": "2024-10-13"
+    },
+    {
+      "id": 90,
+      "nome": "Juliana Souza",
+      "email": "juliana.souza@email.com",
+      "telefone": "(59) 985304-6985",
+      "dataCadastro": "2024-03-19"
+    },
+    {
+      "id": 91,
+      "nome": "Gabriel Costa",
+      "email": "gabriel.costa@email.com",
+      "telefone": "(98) 956593-4320",
+      "dataCadastro": "2024-04-09"
+    },
+    {
+      "id": 92,
+      "nome": "Clara Almeida",
+      "email": "clara.almeida@email.com",
+      "telefone": "(59) 948648-7474",
+      "dataCadastro": "2024-02-22"
+    },
+    {
+      "id": 93,
+      "nome": "Pedro Almeida",
+      "email": "pedro.almeida@email.com",
+      "telefone": "(66) 959973-2320",
+      "dataCadastro": "2024-06-17"
+    },
+    {
+      "id": 94,
+      "nome": "Clara Souza",
+      "email": "clara.souza@email.com",
+      "telefone": "(97) 948104-8338",
+      "dataCadastro": "2025-02-07"
+    },
+    {
+      "id": 95,
+      "nome": "Clara Mendes",
+      "email": "clara.mendes@email.com",
+      "telefone": "(47) 979913-6913",
+      "dataCadastro": "2024-10-03"
+    },
+    {
+      "id": 96,
+      "nome": "Juliana Almeida",
+      "email": "juliana.almeida@email.com",
+      "telefone": "(49) 920055-2416",
+      "dataCadastro": "2024-05-06"
+    },
+    {
+      "id": 97,
+      "nome": "Beatriz Silva",
+      "email": "beatriz.silva@email.com",
+      "telefone": "(99) 932080-5096",
+      "dataCadastro": "2024-09-22"
+    },
+    {
+      "id": 98,
+      "nome": "Juliana Santos",
+      "email": "juliana.santos@email.com",
+      "telefone": "(31) 920377-8764",
+      "dataCadastro": "2024-04-13"
+    },
+    {
+      "id": 99,
+      "nome": "Lucas Rocha",
+      "email": "lucas.rocha@email.com",
+      "telefone": "(95) 931952-4781",
+      "dataCadastro": "2024-12-30"
+    },
+    {
+      "id": 100,
+      "nome": "Ana Mendes",
+      "email": "ana.mendes@email.com",
+      "telefone": "(20) 982542-9714",
+      "dataCadastro": "2024-01-28"
+    }
+  ],
+  "alugueis": [
+    {
+      "id": 1,
+      "clienteId": 95,
+      "filmeId": 59,
+      "dataAluguel": "2025-01-16",
+      "dataDevolucaoPrevista": "2025-01-23",
+      "dataDevolucaoReal": null,
+      "valorTotal": 42.84,
+      "status": "ativo"
+    },
+    {
+      "id": 2,
+      "clienteId": 70,
+      "filmeId": 44,
+      "dataAluguel": "2025-02-22",
+      "dataDevolucaoPrevista": "2025-02-27",
+      "dataDevolucaoReal": null,
+      "valorTotal": 34.1,
+      "status": "ativo"
+    },
+    {
+      "id": 3,
+      "clienteId": 33,
+      "filmeId": 96,
+      "dataAluguel": "2025-02-04",
+      "dataDevolucaoPrevista": "2025-02-10",
+      "dataDevolucaoReal": null,
+      "valorTotal": 26.64,
+      "status": "ativo"
+    },
+    {
+      "id": 4,
+      "clienteId": 15,
+      "filmeId": 39,
+      "dataAluguel": "2025-02-24",
+      "dataDevolucaoPrevista": "2025-03-02",
+      "dataDevolucaoReal": null,
+      "valorTotal": 26.34,
+      "status": "ativo"
+    },
+    {
+      "id": 5,
+      "clienteId": 77,
+      "filmeId": 94,
+      "dataAluguel": "2025-03-01",
+      "dataDevolucaoPrevista": "2025-03-08",
+      "dataDevolucaoReal": "2025-03-06",
+      "valorTotal": 46.83,
+      "status": "concluido"
+    },
+    {
+      "id": 6,
+      "clienteId": 11,
+      "filmeId": 48,
+      "dataAluguel": "2025-01-19",
+      "dataDevolucaoPrevista": "2025-01-20",
+      "dataDevolucaoReal": null,
+      "valorTotal": 5.77,
+      "status": "ativo"
+    },
+    {
+      "id": 7,
+      "clienteId": 28,
+      "filmeId": 56,
+      "dataAluguel": "2025-03-24",
+      "dataDevolucaoPrevista": "2025-03-26",
+      "dataDevolucaoReal": "2025-03-24",
+      "valorTotal": 8.58,
+      "status": "concluido"
+    },
+    {
+      "id": 8,
+      "clienteId": 16,
+      "filmeId": 2,
+      "dataAluguel": "2025-01-18",
+      "dataDevolucaoPrevista": "2025-01-19",
+      "dataDevolucaoReal": null,
+      "valorTotal": 4.78,
+      "status": "ativo"
+    },
+    {
+      "id": 9,
+      "clienteId": 61,
+      "filmeId": 4,
+      "dataAluguel": "2025-03-02",
+      "dataDevolucaoPrevista": "2025-03-04",
+      "dataDevolucaoReal": null,
+      "valorTotal": 10.2,
+      "status": "ativo"
+    },
+    {
+      "id": 10,
+      "clienteId": 40,
+      "filmeId": 99,
+      "dataAluguel": "2025-03-16",
+      "dataDevolucaoPrevista": "2025-03-19",
+      "dataDevolucaoReal": null,
+      "valorTotal": 19.02,
+      "status": "ativo"
+    },
+    {
+      "id": 11,
+      "clienteId": 74,
+      "filmeId": 35,
+      "dataAluguel": "2025-02-06",
+      "dataDevolucaoPrevista": "2025-02-07",
+      "dataDevolucaoReal": null,
+      "valorTotal": 6.89,
+      "status": "ativo"
+    },
+    {
+      "id": 12,
+      "clienteId": 9,
+      "filmeId": 77,
+      "dataAluguel": "2025-03-05",
+      "dataDevolucaoPrevista": "2025-03-09",
+      "dataDevolucaoReal": null,
+      "valorTotal": 22.68,
+      "status": "ativo"
+    },
+    {
+      "id": 13,
+      "clienteId": 75,
+      "filmeId": 53,
+      "dataAluguel": "2025-01-21",
+      "dataDevolucaoPrevista": "2025-01-24",
+      "dataDevolucaoReal": null,
+      "valorTotal": 16.23,
+      "status": "ativo"
+    },
+    {
+      "id": 14,
+      "clienteId": 50,
+      "filmeId": 48,
+      "dataAluguel": "2025-01-09",
+      "dataDevolucaoPrevista": "2025-01-10",
+      "dataDevolucaoReal": null,
+      "valorTotal": 5.77,
+      "status": "ativo"
+    },
+    {
+      "id": 15,
+      "clienteId": 1,
+      "filmeId": 56,
+      "dataAluguel": "2025-03-08",
+      "dataDevolucaoPrevista": "2025-03-15",
+      "dataDevolucaoReal": "2025-03-12",
+      "valorTotal": 30.03,
+      "status": "concluido"
+    },
+    {
+      "id": 16,
+      "clienteId": 83,
+      "filmeId": 38,
+      "dataAluguel": "2025-01-28",
+      "dataDevolucaoPrevista": "2025-01-29",
+      "dataDevolucaoReal": null,
+      "valorTotal": 4.8,
+      "status": "ativo"
+    },
+    {
+      "id": 17,
+      "clienteId": 81,
+      "filmeId": 76,
+      "dataAluguel": "2025-02-12",
+      "dataDevolucaoPrevista": "2025-02-17",
+      "dataDevolucaoReal": "2025-02-12",
+      "valorTotal": 33.3,
+      "status": "concluido"
+    },
+    {
+      "id": 18,
+      "clienteId": 96,
+      "filmeId": 84,
+      "dataAluguel": "2025-03-11",
+      "dataDevolucaoPrevista": "2025-03-12",
+      "dataDevolucaoReal": null,
+      "valorTotal": 4.29,
+      "status": "ativo"
+    },
+    {
+      "id": 19,
+      "clienteId": 18,
+      "filmeId": 42,
+      "dataAluguel": "2025-03-02",
+      "dataDevolucaoPrevista": "2025-03-07",
+      "dataDevolucaoReal": null,
+      "valorTotal": 28.6,
+      "status": "ativo"
+    },
+    {
+      "id": 20,
+      "clienteId": 26,
+      "filmeId": 77,
+      "dataAluguel": "2025-01-16",
+      "dataDevolucaoPrevista": "2025-01-19",
+      "dataDevolucaoReal": null,
+      "valorTotal": 17.01,
+      "status": "ativo"
+    },
+    {
+      "id": 21,
+      "clienteId": 35,
+      "filmeId": 33,
+      "dataAluguel": "2025-03-02",
+      "dataDevolucaoPrevista": "2025-03-08",
+      "dataDevolucaoReal": null,
+      "valorTotal": 26.22,
+      "status": "ativo"
+    },
+    {
+      "id": 22,
+      "clienteId": 92,
+      "filmeId": 21,
+      "dataAluguel": "2025-01-27",
+      "dataDevolucaoPrevista": "2025-02-03",
+      "dataDevolucaoReal": null,
+      "valorTotal": 45.22,
+      "status": "ativo"
+    },
+    {
+      "id": 23,
+      "clienteId": 8,
+      "filmeId": 65,
+      "dataAluguel": "2025-01-19",
+      "dataDevolucaoPrevista": "2025-01-20",
+      "dataDevolucaoReal": null,
+      "valorTotal": 6.83,
+      "status": "ativo"
+    },
+    {
+      "id": 24,
+      "clienteId": 86,
+      "filmeId": 48,
+      "dataAluguel": "2025-03-07",
+      "dataDevolucaoPrevista": "2025-03-10",
+      "dataDevolucaoReal": "2025-03-07",
+      "valorTotal": 17.31,
+      "status": "concluido"
+    },
+    {
+      "id": 25,
+      "clienteId": 72,
+      "filmeId": 55,
+      "dataAluguel": "2025-03-06",
+      "dataDevolucaoPrevista": "2025-03-09",
+      "dataDevolucaoReal": null,
+      "valorTotal": 17.49,
+      "status": "ativo"
+    },
+    {
+      "id": 26,
+      "clienteId": 92,
+      "filmeId": 41,
+      "dataAluguel": "2025-03-06",
+      "dataDevolucaoPrevista": "2025-03-11",
+      "dataDevolucaoReal": "2025-03-07",
+      "valorTotal": 25.7,
+      "status": "concluido"
+    },
+    {
+      "id": 27,
+      "clienteId": 65,
+      "filmeId": 20,
+      "dataAluguel": "2025-02-15",
+      "dataDevolucaoPrevista": "2025-02-19",
+      "dataDevolucaoReal": null,
+      "valorTotal": 18.84,
+      "status": "ativo"
+    },
+    {
+      "id": 28,
+      "clienteId": 71,
+      "filmeId": 29,
+      "dataAluguel": "2025-03-01",
+      "dataDevolucaoPrevista": "2025-03-02",
+      "dataDevolucaoReal": null,
+      "valorTotal": 4.21,
+      "status": "ativo"
+    },
+    {
+      "id": 29,
+      "clienteId": 23,
+      "filmeId": 51,
+      "dataAluguel": "2025-03-05",
+      "dataDevolucaoPrevista": "2025-03-06",
+      "dataDevolucaoReal": null,
+      "valorTotal": 5.64,
+      "status": "ativo"
+    },
+    {
+      "id": 30,
+      "clienteId": 85,
+      "filmeId": 45,
+      "dataAluguel": "2025-02-08",
+      "dataDevolucaoPrevista": "2025-02-12",
+      "dataDevolucaoReal": null,
+      "valorTotal": 21.64,
+      "status": "ativo"
+    },
+    {
+      "id": 31,
+      "clienteId": 49,
+      "filmeId": 4,
+      "dataAluguel": "2025-01-14",
+      "dataDevolucaoPrevista": "2025-01-20",
+      "dataDevolucaoReal": null,
+      "valorTotal": 30.6,
+      "status": "ativo"
+    },
+    {
+      "id": 32,
+      "clienteId": 24,
+      "filmeId": 43,
+      "dataAluguel": "2025-01-28",
+      "dataDevolucaoPrevista": "2025-02-04",
+      "dataDevolucaoReal": null,
+      "valorTotal": 34.86,
+      "status": "ativo"
+    },
+    {
+      "id": 33,
+      "clienteId": 2,
+      "filmeId": 6,
+      "dataAluguel": "2025-01-08",
+      "dataDevolucaoPrevista": "2025-01-10",
+      "dataDevolucaoReal": "2025-01-08",
+      "valorTotal": 9.28,
+      "status": "concluido"
+    },
+    {
+      "id": 34,
+      "clienteId": 97,
+      "filmeId": 15,
+      "dataAluguel": "2025-02-15",
+      "dataDevolucaoPrevista": "2025-02-16",
+      "dataDevolucaoReal": null,
+      "valorTotal": 5.8,
+      "status": "ativo"
+    },
+    {
+      "id": 35,
+      "clienteId": 90,
+      "filmeId": 19,
+      "dataAluguel": "2025-01-24",
+      "dataDevolucaoPrevista": "2025-01-26",
+      "dataDevolucaoReal": null,
+      "valorTotal": 9.64,
+      "status": "ativo"
+    },
+    {
+      "id": 36,
+      "clienteId": 77,
+      "filmeId": 26,
+      "dataAluguel": "2025-03-25",
+      "dataDevolucaoPrevista": "2025-03-29",
+      "dataDevolucaoReal": null,
+      "valorTotal": 25.92,
+      "status": "ativo"
+    },
+    {
+      "id": 37,
+      "clienteId": 70,
+      "filmeId": 36,
+      "dataAluguel": "2025-03-04",
+      "dataDevolucaoPrevista": "2025-03-09",
+      "dataDevolucaoReal": null,
+      "valorTotal": 28.9,
+      "status": "ativo"
+    },
+    {
+      "id": 38,
+      "clienteId": 23,
+      "filmeId": 84,
+      "dataAluguel": "2025-03-07",
+      "dataDevolucaoPrevista": "2025-03-10",
+      "dataDevolucaoReal": "2025-03-08",
+      "valorTotal": 12.87,
+      "status": "concluido"
+    },
+    {
+      "id": 39,
+      "clienteId": 2,
+      "filmeId": 88,
+      "dataAluguel": "2025-01-08",
+      "dataDevolucaoPrevista": "2025-01-09",
+      "dataDevolucaoReal": "2025-01-08",
+      "valorTotal": 5.74,
+      "status": "concluido"
+    },
+    {
+      "id": 40,
+      "clienteId": 38,
+      "filmeId": 13,
+      "dataAluguel": "2025-03-18",
+      "dataDevolucaoPrevista": "2025-03-25",
+      "dataDevolucaoReal": null,
+      "valorTotal": 37.17,
+      "status": "ativo"
+    },
+    {
+      "id": 41,
+      "clienteId": 26,
+      "filmeId": 30,
+      "dataAluguel": "2025-01-28",
+      "dataDevolucaoPrevista": "2025-01-31",
+      "dataDevolucaoReal": null,
+      "valorTotal": 15.99,
+      "status": "ativo"
+    },
+    {
+      "id": 42,
+      "clienteId": 65,
+      "filmeId": 100,
+      "dataAluguel": "2025-03-19",
+      "dataDevolucaoPrevista": "2025-03-21",
+      "dataDevolucaoReal": null,
+      "valorTotal": 12.62,
+      "status": "ativo"
+    },
+    {
+      "id": 43,
+      "clienteId": 41,
+      "filmeId": 88,
+      "dataAluguel": "2025-02-28",
+      "dataDevolucaoPrevista": "2025-03-05",
+      "dataDevolucaoReal": "2025-03-01",
+      "valorTotal": 28.7,
+      "status": "concluido"
+    },
+    {
+      "id": 44,
+      "clienteId": 4,
+      "filmeId": 40,
+      "dataAluguel": "2025-01-05",
+      "dataDevolucaoPrevista": "2025-01-11",
+      "dataDevolucaoReal": "2025-01-07",
+      "valorTotal": 26.28,
+      "status": "concluido"
+    },
+    {
+      "id": 45,
+      "clienteId": 78,
+      "filmeId": 61,
+      "dataAluguel": "2025-02-25",
+      "dataDevolucaoPrevista": "2025-02-26",
+      "dataDevolucaoReal": null,
+      "valorTotal": 4.55,
+      "status": "ativo"
+    },
+    {
+      "id": 46,
+      "clienteId": 66,
+      "filmeId": 70,
+      "dataAluguel": "2025-01-11",
+      "dataDevolucaoPrevista": "2025-01-17",
+      "dataDevolucaoReal": null,
+      "valorTotal": 34.2,
+      "status": "ativo"
+    },
+    {
+      "id": 47,
+      "clienteId": 67,
+      "filmeId": 10,
+      "dataAluguel": "2025-02-26",
+      "dataDevolucaoPrevista": "2025-03-04",
+      "dataDevolucaoReal": null,
+      "valorTotal": 39.72,
+      "status": "ativo"
+    },
+    {
+      "id": 48,
+      "clienteId": 94,
+      "filmeId": 25,
+      "dataAluguel": "2025-03-06",
+      "dataDevolucaoPrevista": "2025-03-09",
+      "dataDevolucaoReal": null,
+      "valorTotal": 18.9,
+      "status": "ativo"
+    },
+    {
+      "id": 49,
+      "clienteId": 97,
+      "filmeId": 61,
+      "dataAluguel": "2025-03-03",
+      "dataDevolucaoPrevista": "2025-03-10",
+      "dataDevolucaoReal": null,
+      "valorTotal": 31.85,
+      "status": "ativo"
+    },
+    {
+      "id": 50,
+      "clienteId": 75,
+      "filmeId": 1,
+      "dataAluguel": "2025-01-27",
+      "dataDevolucaoPrevista": "2025-02-01",
+      "dataDevolucaoReal": "2025-01-28",
+      "valorTotal": 29,
+      "status": "concluido"
+    },
+    {
+      "id": 51,
+      "clienteId": 92,
+      "filmeId": 98,
+      "dataAluguel": "2025-01-09",
+      "dataDevolucaoPrevista": "2025-01-16",
+      "dataDevolucaoReal": "2025-01-15",
+      "valorTotal": 47.25,
+      "status": "concluido"
+    },
+    {
+      "id": 52,
+      "clienteId": 82,
+      "filmeId": 54,
+      "dataAluguel": "2025-02-02",
+      "dataDevolucaoPrevista": "2025-02-04",
+      "dataDevolucaoReal": null,
+      "valorTotal": 12.74,
+      "status": "ativo"
+    },
+    {
+      "id": 53,
+      "clienteId": 41,
+      "filmeId": 81,
+      "dataAluguel": "2025-02-16",
+      "dataDevolucaoPrevista": "2025-02-22",
+      "dataDevolucaoReal": null,
+      "valorTotal": 37.32,
+      "status": "ativo"
+    },
+    {
+      "id": 54,
+      "clienteId": 49,
+      "filmeId": 65,
+      "dataAluguel": "2025-03-05",
+      "dataDevolucaoPrevista": "2025-03-08",
+      "dataDevolucaoReal": "2025-03-07",
+      "valorTotal": 20.49,
+      "status": "concluido"
+    },
+    {
+      "id": 55,
+      "clienteId": 7,
+      "filmeId": 73,
+      "dataAluguel": "2025-02-05",
+      "dataDevolucaoPrevista": "2025-02-10",
+      "dataDevolucaoReal": null,
+      "valorTotal": 31.35,
+      "status": "ativo"
+    },
+    {
+      "id": 56,
+      "clienteId": 64,
+      "filmeId": 94,
+      "dataAluguel": "2025-02-16",
+      "dataDevolucaoPrevista": "2025-02-22",
+      "dataDevolucaoReal": "2025-02-21",
+      "valorTotal": 40.14,
+      "status": "concluido"
+    },
+    {
+      "id": 57,
+      "clienteId": 28,
+      "filmeId": 34,
+      "dataAluguel": "2025-03-25",
+      "dataDevolucaoPrevista": "2025-03-26",
+      "dataDevolucaoReal": null,
+      "valorTotal": 4.75,
+      "status": "ativo"
+    },
+    {
+      "id": 58,
+      "clienteId": 61,
+      "filmeId": 57,
+      "dataAluguel": "2025-01-01",
+      "dataDevolucaoPrevista": "2025-01-02",
+      "dataDevolucaoReal": null,
+      "valorTotal": 6.55,
+      "status": "ativo"
+    },
+    {
+      "id": 59,
+      "clienteId": 40,
+      "filmeId": 12,
+      "dataAluguel": "2025-01-28",
+      "dataDevolucaoPrevista": "2025-01-30",
+      "dataDevolucaoReal": null,
+      "valorTotal": 9.14,
+      "status": "ativo"
+    },
+    {
+      "id": 60,
+      "clienteId": 21,
+      "filmeId": 28,
+      "dataAluguel": "2025-03-23",
+      "dataDevolucaoPrevista": "2025-03-25",
+      "dataDevolucaoReal": "2025-03-24",
+      "valorTotal": 8.52,
+      "status": "concluido"
+    },
+    {
+      "id": 61,
+      "clienteId": 24,
+      "filmeId": 8,
+      "dataAluguel": "2025-01-23",
+      "dataDevolucaoPrevista": "2025-01-24",
+      "dataDevolucaoReal": null,
+      "valorTotal": 6.71,
+      "status": "ativo"
+    },
+    {
+      "id": 62,
+      "clienteId": 2,
+      "filmeId": 41,
+      "dataAluguel": "2025-03-04",
+      "dataDevolucaoPrevista": "2025-03-08",
+      "dataDevolucaoReal": "2025-03-06",
+      "valorTotal": 20.56,
+      "status": "concluido"
+    },
+    {
+      "id": 63,
+      "clienteId": 60,
+      "filmeId": 76,
+      "dataAluguel": "2025-01-17",
+      "dataDevolucaoPrevista": "2025-01-22",
+      "dataDevolucaoReal": "2025-01-19",
+      "valorTotal": 33.3,
+      "status": "concluido"
+    },
+    {
+      "id": 64,
+      "clienteId": 7,
+      "filmeId": 4,
+      "dataAluguel": "2025-02-28",
+      "dataDevolucaoPrevista": "2025-03-02",
+      "dataDevolucaoReal": "2025-03-01",
+      "valorTotal": 10.2,
+      "status": "concluido"
+    },
+    {
+      "id": 65,
+      "clienteId": 96,
+      "filmeId": 6,
+      "dataAluguel": "2025-03-08",
+      "dataDevolucaoPrevista": "2025-03-14",
+      "dataDevolucaoReal": null,
+      "valorTotal": 27.84,
+      "status": "ativo"
+    },
+    {
+      "id": 66,
+      "clienteId": 73,
+      "filmeId": 18,
+      "dataAluguel": "2025-03-10",
+      "dataDevolucaoPrevista": "2025-03-14",
+      "dataDevolucaoReal": null,
+      "valorTotal": 27.64,
+      "status": "ativo"
+    },
+    {
+      "id": 67,
+      "clienteId": 47,
+      "filmeId": 46,
+      "dataAluguel": "2025-02-05",
+      "dataDevolucaoPrevista": "2025-02-11",
+      "dataDevolucaoReal": "2025-02-05",
+      "valorTotal": 32.1,
+      "status": "concluido"
+    },
+    {
+      "id": 68,
+      "clienteId": 16,
+      "filmeId": 100,
+      "dataAluguel": "2025-01-09",
+      "dataDevolucaoPrevista": "2025-01-16",
+      "dataDevolucaoReal": null,
+      "valorTotal": 44.17,
+      "status": "ativo"
+    },
+    {
+      "id": 69,
+      "clienteId": 48,
+      "filmeId": 38,
+      "dataAluguel": "2025-02-23",
+      "dataDevolucaoPrevista": "2025-03-02",
+      "dataDevolucaoReal": "2025-02-23",
+      "valorTotal": 33.6,
+      "status": "concluido"
+    },
+    {
+      "id": 70,
+      "clienteId": 34,
+      "filmeId": 49,
+      "dataAluguel": "2025-03-04",
+      "dataDevolucaoPrevista": "2025-03-06",
+      "dataDevolucaoReal": null,
+      "valorTotal": 11.18,
+      "status": "ativo"
+    },
+    {
+      "id": 71,
+      "clienteId": 90,
+      "filmeId": 86,
+      "dataAluguel": "2025-01-07",
+      "dataDevolucaoPrevista": "2025-01-08",
+      "dataDevolucaoReal": null,
+      "valorTotal": 6.5,
+      "status": "ativo"
+    },
+    {
+      "id": 72,
+      "clienteId": 28,
+      "filmeId": 88,
+      "dataAluguel": "2025-03-15",
+      "dataDevolucaoPrevista": "2025-03-16",
+      "dataDevolucaoReal": null,
+      "valorTotal": 5.74,
+      "status": "ativo"
+    },
+    {
+      "id": 73,
+      "clienteId": 94,
+      "filmeId": 40,
+      "dataAluguel": "2025-03-18",
+      "dataDevolucaoPrevista": "2025-03-23",
+      "dataDevolucaoReal": null,
+      "valorTotal": 21.9,
+      "status": "ativo"
+    },
+    {
+      "id": 74,
+      "clienteId": 54,
+      "filmeId": 24,
+      "dataAluguel": "2025-02-07",
+      "dataDevolucaoPrevista": "2025-02-12",
+      "dataDevolucaoReal": "2025-02-09",
+      "valorTotal": 26.65,
+      "status": "concluido"
+    },
+    {
+      "id": 75,
+      "clienteId": 63,
+      "filmeId": 84,
+      "dataAluguel": "2025-03-21",
+      "dataDevolucaoPrevista": "2025-03-25",
+      "dataDevolucaoReal": "2025-03-23",
+      "valorTotal": 17.16,
+      "status": "concluido"
+    },
+    {
+      "id": 76,
+      "clienteId": 99,
+      "filmeId": 98,
+      "dataAluguel": "2025-01-23",
+      "dataDevolucaoPrevista": "2025-01-27",
+      "dataDevolucaoReal": "2025-01-25",
+      "valorTotal": 27,
+      "status": "concluido"
+    },
+    {
+      "id": 77,
+      "clienteId": 78,
+      "filmeId": 15,
+      "dataAluguel": "2025-03-15",
+      "dataDevolucaoPrevista": "2025-03-16",
+      "dataDevolucaoReal": null,
+      "valorTotal": 5.8,
+      "status": "ativo"
+    },
+    {
+      "id": 78,
+      "clienteId": 57,
+      "filmeId": 64,
+      "dataAluguel": "2025-03-18",
+      "dataDevolucaoPrevista": "2025-03-21",
+      "dataDevolucaoReal": "2025-03-19",
+      "valorTotal": 16.89,
+      "status": "concluido"
+    },
+    {
+      "id": 79,
+      "clienteId": 7,
+      "filmeId": 60,
+      "dataAluguel": "2025-03-25",
+      "dataDevolucaoPrevista": "2025-03-31",
+      "dataDevolucaoReal": null,
+      "valorTotal": 38.46,
+      "status": "ativo"
+    },
+    {
+      "id": 80,
+      "clienteId": 29,
+      "filmeId": 93,
+      "dataAluguel": "2025-03-07",
+      "dataDevolucaoPrevista": "2025-03-12",
+      "dataDevolucaoReal": "2025-03-08",
+      "valorTotal": 30.1,
+      "status": "concluido"
+    },
+    {
+      "id": 81,
+      "clienteId": 84,
+      "filmeId": 94,
+      "dataAluguel": "2025-03-07",
+      "dataDevolucaoPrevista": "2025-03-14",
+      "dataDevolucaoReal": null,
+      "valorTotal": 46.83,
+      "status": "ativo"
+    },
+    {
+      "id": 82,
+      "clienteId": 35,
+      "filmeId": 32,
+      "dataAluguel": "2025-01-26",
+      "dataDevolucaoPrevista": "2025-01-30",
+      "dataDevolucaoReal": null,
+      "valorTotal": 19.68,
+      "status": "ativo"
+    },
+    {
+      "id": 83,
+      "clienteId": 13,
+      "filmeId": 56,
+      "dataAluguel": "2025-02-22",
+      "dataDevolucaoPrevista": "2025-02-25",
+      "dataDevolucaoReal": null,
+      "valorTotal": 12.87,
+      "status": "ativo"
+    },
+    {
+      "id": 84,
+      "clienteId": 99,
+      "filmeId": 18,
+      "dataAluguel": "2025-02-19",
+      "dataDevolucaoPrevista": "2025-02-20",
+      "dataDevolucaoReal": "2025-02-19",
+      "valorTotal": 6.91,
+      "status": "concluido"
+    },
+    {
+      "id": 85,
+      "clienteId": 20,
+      "filmeId": 97,
+      "dataAluguel": "2025-02-03",
+      "dataDevolucaoPrevista": "2025-02-09",
+      "dataDevolucaoReal": null,
+      "valorTotal": 36.12,
+      "status": "ativo"
+    },
+    {
+      "id": 86,
+      "clienteId": 93,
+      "filmeId": 62,
+      "dataAluguel": "2025-01-13",
+      "dataDevolucaoPrevista": "2025-01-17",
+      "dataDevolucaoReal": "2025-01-16",
+      "valorTotal": 17.08,
+      "status": "concluido"
+    },
+    {
+      "id": 87,
+      "clienteId": 90,
+      "filmeId": 53,
+      "dataAluguel": "2025-03-05",
+      "dataDevolucaoPrevista": "2025-03-12",
+      "dataDevolucaoReal": null,
+      "valorTotal": 37.87,
+      "status": "ativo"
+    },
+    {
+      "id": 88,
+      "clienteId": 49,
+      "filmeId": 48,
+      "dataAluguel": "2025-02-04",
+      "dataDevolucaoPrevista": "2025-02-09",
+      "dataDevolucaoReal": "2025-02-08",
+      "valorTotal": 28.85,
+      "status": "concluido"
+    },
+    {
+      "id": 89,
+      "clienteId": 59,
+      "filmeId": 61,
+      "dataAluguel": "2025-01-16",
+      "dataDevolucaoPrevista": "2025-01-21",
+      "dataDevolucaoReal": null,
+      "valorTotal": 22.75,
+      "status": "ativo"
+    },
+    {
+      "id": 90,
+      "clienteId": 88,
+      "filmeId": 95,
+      "dataAluguel": "2025-01-15",
+      "dataDevolucaoPrevista": "2025-01-16",
+      "dataDevolucaoReal": null,
+      "valorTotal": 6.04,
+      "status": "ativo"
+    },
+    {
+      "id": 91,
+      "clienteId": 21,
+      "filmeId": 68,
+      "dataAluguel": "2025-01-09",
+      "dataDevolucaoPrevista": "2025-01-11",
+      "dataDevolucaoReal": null,
+      "valorTotal": 8.68,
+      "status": "ativo"
+    },
+    {
+      "id": 92,
+      "clienteId": 42,
+      "filmeId": 11,
+      "dataAluguel": "2025-03-22",
+      "dataDevolucaoPrevista": "2025-03-24",
+      "dataDevolucaoReal": null,
+      "valorTotal": 9.92,
+      "status": "ativo"
+    },
+    {
+      "id": 93,
+      "clienteId": 90,
+      "filmeId": 76,
+      "dataAluguel": "2025-03-01",
+      "dataDevolucaoPrevista": "2025-03-07",
+      "dataDevolucaoReal": null,
+      "valorTotal": 39.96,
+      "status": "ativo"
+    },
+    {
+      "id": 94,
+      "clienteId": 61,
+      "filmeId": 56,
+      "dataAluguel": "2025-01-17",
+      "dataDevolucaoPrevista": "2025-01-24",
+      "dataDevolucaoReal": null,
+      "valorTotal": 30.03,
+      "status": "ativo"
+    },
+    {
+      "id": 95,
+      "clienteId": 88,
+      "filmeId": 47,
+      "dataAluguel": "2025-01-26",
+      "dataDevolucaoPrevista": "2025-01-30",
+      "dataDevolucaoReal": null,
+      "valorTotal": 20.24,
+      "status": "ativo"
+    },
+    {
+      "id": 96,
+      "clienteId": 56,
+      "filmeId": 59,
+      "dataAluguel": "2025-02-11",
+      "dataDevolucaoPrevista": "2025-02-12",
+      "dataDevolucaoReal": null,
+      "valorTotal": 6.12,
+      "status": "ativo"
+    },
+    {
+      "id": 97,
+      "clienteId": 62,
+      "filmeId": 73,
+      "dataAluguel": "2025-03-24",
+      "dataDevolucaoPrevista": "2025-03-30",
+      "dataDevolucaoReal": "2025-03-28",
+      "valorTotal": 37.62,
+      "status": "concluido"
+    },
+    {
+      "id": 98,
+      "clienteId": 9,
+      "filmeId": 93,
+      "dataAluguel": "2025-03-24",
+      "dataDevolucaoPrevista": "2025-03-31",
+      "dataDevolucaoReal": "2025-03-28",
+      "valorTotal": 42.14,
+      "status": "concluido"
+    },
+    {
+      "id": 99,
+      "clienteId": 49,
+      "filmeId": 44,
+      "dataAluguel": "2025-01-21",
+      "dataDevolucaoPrevista": "2025-01-28",
+      "dataDevolucaoReal": null,
+      "valorTotal": 47.74,
+      "status": "ativo"
+    },
+    {
+      "id": 100,
+      "clienteId": 7,
+      "filmeId": 15,
+      "dataAluguel": "2025-01-04",
+      "dataDevolucaoPrevista": "2025-01-11",
+      "dataDevolucaoReal": null,
+      "valorTotal": 40.6,
+      "status": "ativo"
     }
   ]
 }

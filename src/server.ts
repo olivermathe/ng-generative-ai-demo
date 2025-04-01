@@ -9,7 +9,10 @@ dotenv.config();
 const server = express();
 const port = 3000;
 
-const swaggerFile = './src/swagger.yaml';
+const apiHost = '';
+const apiToken = '';
+
+const swaggerFile = './src/swagger-bff-3.yaml';
 
 let toolsDefinition: { [k: string]: ToolDefinition } = {};
 
@@ -23,7 +26,7 @@ interface ToolDefinition {
 
 interface ApiParam {
     name: string;
-    schema: { type: 'string' | 'integer' | 'number' };
+    schema: { type: 'string' | 'integer' | 'number' |'boolean' };
     required: boolean;
     in: 'path' | 'query' | 'body';
     description: string
@@ -39,127 +42,6 @@ if (!googleAiStudioApiKey) {
 
 const genAI = new GoogleGenerativeAI(googleAiStudioApiKey);
 let model: GenerativeModel | undefined;
-// let model: GenerativeModel | undefined = genAI.getGenerativeModel({
-//   model: 'gemini-2.0-flash',
-//   systemInstruction: 
-//   // `
-//   // Você é um assistente de uma locadora de filmes que ajuda o funcionário a realizar tarefas no sistema.
-//   // O usuário não tem conhecimento de formatos JSON ou XML.
-//   // Retorne as informações sempre em linguagem natural.
-//   // Sua resposta esta sendo exibida dentro de um innerHtml.
-//   // Você pode utilizar tags HTML na resposta.
-//   // Caso o usuário pessa exibição de gráficos, você pode utilizar GraphJs na resposta, eu incluí a dependência da biblioteca no projeto.
-//   // Use sempre um ID diferente para cada gráfico que exibir.
-//   // `
-//   `
-//   Você é um assistente virtual de uma locadora de filmes, projetado para ajudar o funcionário a realizar tarefas no sistema da locadora.
-//   O usuário não tem conhecimento técnico sobre formatos como JSON ou XML, então responda sempre em linguagem natural, clara e simples.
-//   Suas respostas serão exibidas em um elemento innerHTML de uma página web, permitindo o uso de tags HTML para formatar o texto e melhorar a apresentação.
-//   Quando o usuário solicitar a exibição de gráficos, como um gráfico de barras ou outro tipo, gere o gráfico diretamente na resposta usando a biblioteca GraphJS, que já está incluída no projeto.
-//   Para cada gráfico, use sempre ID "graph_app" e "canvas_app" para o canvas no código HTML para garantir que funcione corretamente, mas não mencione detalhes técnicos como "GraphJS" ou "ID" na resposta, a menos que o usuário pergunte.
-//   Se precisar de mais informações para gerar o gráfico, peça ao usuário de forma clara e amigável, como: "Quais filmes você gostaria de incluir? Todos ou de um ator específico?".
-//   `
-//   ,
-//   tools: [
-//     {
-//       functionDeclarations: [
-//         {
-//           name: 'getUsers',
-//           description: 'Retorna os usuários cadastrados no sistema da locadora, pode ser usado com filtro ou sem o filtro para listar todos',
-//           parameters: {
-//             type: SchemaType.OBJECT,
-//             description: 'Campos para filtrar a busca de usuário, os campos podem ser ignorados para listar todos usuários cadastrados',
-//             properties: {
-//               nome: {
-//                 type: SchemaType.STRING,
-//                 description: 'Nome do usuário para buscar no sistema',
-//                 nullable: true
-//               },
-//               email: {
-//                 type: SchemaType.STRING,
-//                 description: 'E-mail do usuário para buscar no sistema',
-//                 nullable: true
-//               },
-//               id: {
-//                 type: SchemaType.NUMBER,
-//                 description: 'Identificador único do cliente cadastrado no sistema',
-//                 nullable: true
-//               }
-//             },
-//             required: []
-//           }
-//         },
-//         {
-//           name: 'getMovies',
-//           description: 'Retorna os filmes cadastrados no sistema da locadora, pode ser usado com filtro ou sem o filtro para listar todos',
-//           parameters: {
-//             type: SchemaType.OBJECT,
-//             description: 'Campos para filtrar a busca de filmes, os campos podem ser ignorados para listar todos filmes cadastrados',
-//             properties: {
-//               titulo: {
-//                 type: SchemaType.STRING,
-//                 description: 'Título do filme para buscar no sistema',
-//                 nullable: true
-//               },
-//               ano: {
-//                 type: SchemaType.NUMBER,
-//                 description: 'Ano de lançamento do filme para buscar no sistema',
-//                 nullable: true
-//               },
-//               precoDiario: {
-//                 type: SchemaType.NUMBER,
-//                 description: 'Preço diário atual do filme para ser alugado',
-//                 nullable: true
-//               },
-//               id: {
-//                 type: SchemaType.NUMBER,
-//                 description: 'Identificador único do filme cadastrado no sistema',
-//                 nullable: true
-//               }
-//             },
-//             required: []
-//           }
-//         },
-//         {
-//           name: 'getRents',
-//           description: 'Retorna os alugueis realizado pelos usuários cadastrados no sistema da locadora, pode ser usado com filtro ou sem o filtro para listar todos',
-//           parameters: {
-//             type: SchemaType.OBJECT,
-//             description: 'Campos para filtrar a busca de alugueis, os campos podem ser ignorados para listar todos alugueis cadastrados',
-//             properties: {
-//               clienteId: {
-//                 type: SchemaType.NUMBER,
-//                 description: 'Identificador único do usuário que realizao o aluguel de filme',
-//                 nullable: true
-//               },
-//               filmeId: {
-//                 type: SchemaType.NUMBER,
-//                 description: 'Identificador único do filme que foi alugado',
-//                 nullable: true
-//               },
-//               dataAluguel: {
-//                 type: SchemaType.STRING,
-//                 description: 'Data em que foi realizado o aluguel',
-//                 nullable: true
-//               },
-//               dataDevolucaoPrevista: {
-//                 type: SchemaType.STRING,
-//                 description: 'Data prevista para o cliente devolver o filme',
-//                 nullable: true
-//               },
-//               id: {
-//                 type: SchemaType.NUMBER,
-//                 description: 'Identificador único do filme cadastrado no sistema',
-//                 nullable: true
-//               }
-//             },
-//             required: []
-//           }
-//         }
-//       ]
-//     }
-//   ]
-// });
 
 let chat: ChatSession | undefined;
 
@@ -252,28 +134,6 @@ server.post('/message', async (req: Request, res: Response) => {
   return res.end();
 });
 
-// let functionsImplementations: any = {
-//   'getUsers': getUsers,
-//   'getMovies': getMovies,
-//   'getRents': getRents
-// }
-
-// async function getMovies(res: Response, params: { titulo?: string, ano?: number, precoDiario?: string, id?: number }): Promise<any> {
-//   return await get(res, params, '/filmes');
-// }
-
-// async function getUsers(res: Response, params: { id?: number, name?: string, email?: number }): Promise<any> {
-//   return await get(res, params, '/clientes');
-// }
-
-// async function getRents(res: Response, params: { id?: number, clienteId?: number, filmeId?: number, dataAluguel?: string, dataDevolucaoPrevista?: string }): Promise<any> {
-//   return await get(res, params, '/alugueis');
-// }
-
-// async function get(res: Response, params: any, path: string) {
-//   return await callAPI(res, 'GET', `${path}?${buildQueryString(params)}`);
-// }
-
 async function callAPI(params: any, definition: ToolDefinition): Promise<globalThis.Response> {
 
   let queryFields: any = {};
@@ -283,13 +143,13 @@ async function callAPI(params: any, definition: ToolDefinition): Promise<globalT
   const method = definition.method;
 
   const headers = {
-    "Content-Type": "application/json"
+    "Content-Type": "application/json",
+    "Authorization": "Bearer " + apiToken
   };
 
   let response;
 
   console.log('Calling API:');
-  // res.write('Calling API:<br>');
 
   for (const field in params) {
     
@@ -304,10 +164,9 @@ async function callAPI(params: any, definition: ToolDefinition): Promise<globalT
 
   }
 
-  let url = `http://localhost:8181${path}?${buildQueryString(queryFields)}`;
+  let url = `${apiHost}${path}?${buildQueryString(queryFields)}`;
 
   console.log(`${method} ${url}`, body);
-  // res.write(`${method} ${url}<br>`);
 
   response = await fetch(url, { method, headers, body: body ? JSON.stringify(body) : null });
 
@@ -339,6 +198,12 @@ function getType(type: string): SchemaType {
         case 'number':
         case 'integer':
             return SchemaType.NUMBER;
+          
+        case 'boolean':
+            return SchemaType.BOOLEAN;
+
+        case 'array':
+            return SchemaType.ARRAY;
     
         default:
             throw new Error("Tipo de parâmetro '"+type+"' não é válido");
@@ -398,15 +263,21 @@ async function swaggerToTools() {
 
             parameters?.forEach((param: any) => {
 
-                const p = param as ApiParam;
+                try {
+                
+                    const p = param as ApiParam;
 
-                declaration.parameters!.properties[p.name] = {
-                    type: getType(p.schema.type),
-                    nullable: p.required,
-                    description: p.description,
-                } as FunctionDeclarationSchemaProperty;
+                    declaration.parameters!.properties[p.name] = {
+                        type: getType(p.schema.type),
+                        nullable: p.required,
+                        description: p.description,
+                    } as FunctionDeclarationSchemaProperty;
 
-                params[p.name] = p.in;
+                    params[p.name] = p.in;
+
+                } catch (e) {
+                    console.error(e);
+                }
 
             });
 
@@ -424,8 +295,6 @@ async function swaggerToTools() {
         }
         
     }
-
-    // console.log(JSON.stringify(toolsDefinition));
 
   } catch (e) {
       console.error(e);

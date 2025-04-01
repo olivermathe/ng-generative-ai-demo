@@ -1,0 +1,578 @@
+openapi: 3.0.1
+info:
+  title: Plataforma de Recebiveis
+  description: BFF da Plataforma de Recebiveis.
+  contact:
+    name: BCO-Squad PME Recebiveis Core
+    url: https://bitbucket.bvnet.bv/scm/plrc-base
+    email: Squad-PME-Recebiveis@bv.com.br
+  version: 0.0.1
+servers:
+  - url: https://springboot-plrc-base-bff-portal.appdes.bvnet.bv
+    description: Generated server url
+security:
+  - bearerAuth: []
+tags:
+  - name: programas
+    description: Serviços referente a programas
+paths:
+  /v1/programas/{codigoPrograma}:
+    get:
+      tags:
+        - programas
+      operationId: consultar_programa
+      description: "Retorna um programa específico cadastrado no sistema PLRC"
+      parameters:
+        - name: codigoPrograma
+          in: path
+          required: true
+          description: "Código do programa que quer buscar no sistema PLRC"
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProgramaORCHResponse'
+  /v1/programas/{codigoPrograma}/sacados/{cdSacado}/conta-movimento:
+    get:
+      tags:
+        - programas
+      operationId: consultar_conta_movimento
+      description: "Retorna a conta de movimento cadastrada para este sacado"
+      parameters:
+        - name: cdSacado
+          in: path
+          required: true
+          description: "Código do sacado cadastrado no programa (retornado no consultar_sacados_programa)"
+          schema:
+            type: integer
+            format: int64
+        - name: codigoPrograma
+          in: path
+          description: "Código do programa que quer listar os sacados"
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ContaMovimentoResponse'
+  /v1/programas/{codigoPrograma}/cedentes/{cdCedentePrograma}/dados-desembolso:
+    get:
+      tags:
+        - programas
+      operationId: consultar_dados_desembolso
+      description: "Retorna os dados de desembolso cadastrado para este cedente"
+      parameters:
+        - name: codigoPrograma
+          in: path
+          required: true
+          description: "Código do programa que quer listar os sacados"
+          schema:
+            type: integer
+            format: int64
+        - name: cdCedentePrograma
+          in: path
+          description: "Código do cedente cadastrado no programa (retornado no consultar_cedentes_programa)"
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DadosDesembolsoResponse'
+  /v1/programas/{codigoPrograma}/sacados-paginado:
+    get:
+      tags:
+        - programas
+      operationId: listar_sacados_programa
+      description: "Lista de forma paginada os sacados cadastrados em um programa"
+      parameters:
+        - name: codigoPrograma
+          in: path
+          description: "Código do programa que quer listar os sacados"
+          required: true
+          schema:
+            type: integer
+            format: int64
+        - name: razaoSocial
+          in: query
+          required: false
+          description: "Campo para filtrar os sacados por razão social (nome)"
+          schema:
+            type: string
+        - name: cnpj
+          in: query
+          description: "Campo para filtrar os sacados por CNPJ ou CPF"
+          required: false
+          schema:
+            type: string
+        - name: itensPorPagina
+          in: query
+          description: "Campo para indicar qual quantidade de dados deve retornar na listagem"
+          required: false
+          schema:
+            type: integer
+            format: int32
+            default: 10
+        - name: pagina
+          in: query
+          required: false
+          description: "Campo para indicar qual página de dados que quer listar"
+          schema:
+            type: integer
+            format: int32
+            default: 1
+        - name: ordem
+          in: query
+          required: false
+          schema:
+            type: string
+            default: ASC
+        - name: dataInicio
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: dataFim
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: statusParticipantePrograma
+          in: query
+          description: "Campo para filtrar sacados por status de cadastro (EM_ANDAMENTO, PENDENTE, ERRO, CADASTRADO)"
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SacadoResponsePaginado'
+  /v1/programas/{codigoPrograma}/clientes/status:
+    get:
+      tags:
+        - programas
+      operationId: consulta_total_status
+      description: "Retorna o a quantidade de clientes (SACADO ou CEDENTE) em cada status"
+      parameters:
+        - name: codigoPrograma
+          in: path
+          description: "Código do programa que quer listar os cedentes"
+          required: true
+          schema:
+            type: integer
+            format: int64
+        - name: tipoCliente
+          in: query
+          description: "Tipo de clientes que quer buscar os dados (CEDENTE ou SACADO)"
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/QuantidadeClientesPorStatus'
+  /v1/programas/{codigoPrograma}/cedentes-paginado:
+    get:
+      tags:
+        - programas
+      operationId: consultar_cedentes_programa
+      description: "Lista de forma paginada os cedentes cadastrados em um programa"
+      parameters:
+        - name: codigoPrograma
+          in: path
+          description: "Código do programa que quer listar os cedentes"
+          required: true
+          schema:
+            type: integer
+            format: int64
+        - name: razaoSocial
+          in: query
+          required: false
+          description: "Campo para filtrar os cedentes por razão social (nome)"
+          schema:
+            type: string
+        - name: cnpj
+          in: query
+          description: "Campo para filtrar os cedentes por CNPJ ou CPF"
+          required: false
+          schema:
+            type: string
+        - name: itensPorPagina
+          in: query
+          description: "Campo para indicar qual quantidade de dados deve retornar na listagem"
+          required: false
+          schema:
+            type: integer
+            format: int32
+            default: 10
+        - name: pagina
+          in: query
+          required: false
+          description: "Campo para indicar qual página de dados que quer listar"
+          schema:
+            type: integer
+            format: int32
+            default: 1
+        - name: ordem
+          in: query
+          required: false
+          schema:
+            type: string
+            default: ASC
+        - name: dataInicio
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: dataFim
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: statusParticipantePrograma
+          in: query
+          description: "Campo para filtrar cedentes por status de cadastro (EM_ANDAMENTO, PENDENTE, ERRO, CADASTRADO)"
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CedentesPaginadoResponse'
+components:
+  schemas:
+    ProgramaORCHResponse:
+      type: object
+      properties:
+        prazoRepasseMandatario:
+          type: integer
+          format: int64
+        prazoMinimoRecebivel:
+          type: integer
+          format: int64
+        flComCoobrigacao:
+          type: boolean
+        cdTipoRecusaAutomatica:
+          type: integer
+          format: int64
+        codigoPrograma:
+          type: integer
+          format: int64
+        nomePrograma:
+          type: string
+        flHabilitado:
+          type: boolean
+        flContratacaoAutomatica:
+          type: boolean
+        flCheckUsuario:
+          type: boolean
+        tipoRegistroDuplicata:
+          type: string
+          enum:
+            - OBRIGATORIO
+            - OPCIONAL
+            - NAO_APLICAVEL
+        codigoProduto:
+          type: integer
+          format: int64
+        nomeProduto:
+          type: string
+        codigoGrupoEconomico:
+          type: integer
+          format: int64
+        nomeGrupoEconomico:
+          type: string
+        dsLogin:
+          type: string
+        tipoAncora:
+          $ref: '#/components/schemas/ProgramaORCHResponseTipoAncora'
+        tipoFormalizacao:
+          $ref: '#/components/schemas/ProgramaORCHResponseTipoFormalizacao'
+        tipoAgrupamentoFormalizacao:
+          $ref: '#/components/schemas/ProgramaORCHResponseTipoAgrupamentoFormalizacao'
+        tipoAgrupamentoDesembolso:
+          $ref: '#/components/schemas/ProgramaORCHResponseTipoAgrupamentoDesembolso'
+        flAjustarProximoDiaUtil:
+          type: boolean
+        tipoLiquidacao:
+          $ref: '#/components/schemas/ProgramaORCHResponseTipoLiquidacao'
+        jurosMoraDia:
+          type: number
+        multa:
+          type: number
+        flProgramaCompleto:
+          type: boolean
+    ProgramaORCHResponseTipoAgrupamentoDesembolso:
+      type: object
+      properties:
+        codigo:
+          type: integer
+          format: int64
+        descricao:
+          type: string
+    ProgramaORCHResponseTipoAgrupamentoFormalizacao:
+      type: object
+      properties:
+        codigo:
+          type: integer
+          format: int64
+        descricao:
+          type: string
+    ProgramaORCHResponseTipoAncora:
+      type: object
+      properties:
+        codigo:
+          type: integer
+          format: int64
+        descricao:
+          type: string
+    ProgramaORCHResponseTipoFormalizacao:
+      type: object
+      properties:
+        codigo:
+          type: integer
+          format: int64
+        descricao:
+          type: string
+    ProgramaORCHResponseTipoLiquidacao:
+      type: object
+      properties:
+        codigo:
+          type: integer
+          format: int64
+        descricao:
+          type: string
+    DadosDesembolsoResponse:
+      type: object
+      properties:
+        cdDadosDesembolsoCedente:
+          type: integer
+          format: int64
+        cdTipoDesembolso:
+          type: integer
+          format: int64
+        nuBanco:
+          type: string
+        cdAgenciaDigito:
+          type: string
+        cdConta:
+          type: string
+        flContaPadrao:
+          type: boolean
+    PrlcSacadoResponse:
+      type: object
+      properties:
+        codigo:
+          type: integer
+          format: int64
+        codigoPrograma:
+          type: integer
+          format: int64
+        codigoPessoa:
+          type: integer
+          format: int64
+        razaoSocial:
+          type: string
+        cnpj:
+          type: string
+        cdLimiteCredito:
+          type: integer
+          format: int64
+        pcDivisaoReceita:
+          type: integer
+          format: int64
+        statusParticipantePrograma:
+          type: string
+          enum:
+            - ONBOARDING
+            - PENDENTE
+            - CADASTRADO
+            - RECUSADO
+            - CANCELADO
+        contaMovimento:
+          type: string
+    ContaMovimentoResponse:
+      type: object
+      properties:
+        cdDadoContaMovimentoParticipante:
+          type: integer
+          format: int64
+        nuBanco:
+          type: string
+        cdConta:
+          type: string
+        cdAgenciaDigito:
+          type: string
+        dsTipoConta:
+          type: string
+    PrlcCedenteResponseConvenioCobranca:
+      type: object
+      properties:
+        codigo:
+          type: number
+        nome:
+          type: string
+    Paginacao:
+      required:
+        - itensPorPagina
+        - ordem
+        - ordenadoPor
+        - pagina
+        - totalItens
+        - totalPaginas
+      type: object
+      properties:
+        itensPorPagina:
+          type: integer
+          format: int32
+        pagina:
+          type: integer
+          format: int32
+        totalItens:
+          type: integer
+          format: int64
+        totalPaginas:
+          type: integer
+          format: int32
+        ordem:
+          type: string
+        ordenadoPor:
+          type: string
+    SacadoResponsePaginado:
+      type: object
+      properties:
+        sacados:
+          type: array
+          items:
+            $ref: '#/components/schemas/PrlcSacadoResponse'
+        paginacao:
+          $ref: '#/components/schemas/Paginacao'
+    QuantidadeClientesPorStatus:
+      type: object
+      properties:
+        pendente:
+          type: integer
+          format: int64
+        recusado:
+          type: integer
+          format: int64
+        sucesso:
+          type: integer
+          format: int64
+        onboarding:
+          type: integer
+          format: int64
+        cancelado:
+          type: integer
+          format: int64
+    CedenteProgramaResponse:
+      type: object
+      properties:
+        codigo:
+          type: integer
+          format: int64
+        codigoPrograma:
+          type: integer
+          format: int64
+        codigoPessoa:
+          type: integer
+          format: int64
+        razaoSocial:
+          type: string
+        cnpj:
+          type: string
+        convenioCobranca:
+          $ref: '#/components/schemas/PrlcCedenteResponseConvenioCobranca'
+        dsTipoDesembolso:
+          type: string
+        contaMovimento:
+          type: string
+        statusParticipantePrograma:
+          type: string
+          enum:
+            - ONBOARDING
+            - PENDENTE
+            - CADASTRADO
+            - RECUSADO
+            - CANCELADO
+    CedentesPaginadoResponse:
+      type: object
+      properties:
+        cedentes:
+          type: array
+          items:
+            $ref: '#/components/schemas/CedenteProgramaResponse'
+        paginacao:
+          $ref: '#/components/schemas/Paginacao'
+    DadosArquivo:
+      type: object
+      properties:
+        CdCtrlProcessamentoCliente:
+          type: integer
+          format: int64
+        CdIdentificadorProcessamento:
+          type: string
+        NmArquivo:
+          type: string
+        TpSituacaoProcessamento:
+          type: string
+        DsErro:
+          type: string
+        FlAtivo:
+          type: string
+        DsLogin:
+          type: string
+    ListaLinhasArquivo:
+      type: object
+      properties:
+        CdCtrlProcessamentoCliente:
+          type: integer
+          format: int64
+        CdCtrlProcessamentoClienteLinha:
+          type: integer
+          format: int64
+        CdLimiteCredito:
+          type: number
+        NrLinha:
+          type: integer
+          format: int64
+        DsErro:
+          type: string
+        DsLogin:
+          type: string
+        NuCpfCnpj:
+          type: string
+        PcDivisaoReceita:
+          type: string
+        TpSituacaoProcessamento:
+          type: string
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "server": "npx tsx ./src/server.ts"
+    "server": "npx tsx ./src/server.ts",
+    "parser": "npx tsx ./src/parser.ts"
   },
   "private": true,
   "dependencies": {

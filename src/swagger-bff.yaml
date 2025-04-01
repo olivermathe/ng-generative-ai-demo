@@ -1,0 +1,4745 @@
+openapi: 3.0.1
+info:
+  title: Plataforma de Recebiveis
+  description: BFF da Plataforma de Recebiveis.
+  contact:
+    name: BCO-Squad PME Recebiveis Core
+    url: https://bitbucket.bvnet.bv/scm/plrc-base
+    email: Squad-PME-Recebiveis@bv.com.br
+  version: 0.0.1
+servers:
+  - url: https://springboot-plrc-base-bff-portal.appdes.bvnet.bv
+    description: Generated server url
+security:
+  - bearerAuth: []
+tags:
+  - name: Api Security
+    description: the Api Security API
+  - name: Atom Configura Produtos - Catalogo Produtos
+    description: Atom Configura Produtos PLRC
+  - name: Atom Configura Produtos - Iof
+    description: Atom Configura Produtos PLRC
+  - name: Atom Dados Cadastrais Pessoa - Dados Principais
+    description: Atom Dados Cadastrais Pessoa GLOB
+  - name: Atom Enquadramento Titulo - Lote Enquadramento
+    description: Atom Enquadramento Titulo
+  - name: Atom Enquadramento Titulo - Lotes -Titulos
+    description: Atom Enquadramento Titulo
+  - name: Atom Enquadramento Titulo - Titulos
+    description: Atom Enquadramento Titulo
+  - name: Atom Parametros - Catalogo de Parametros
+    description: Atom Parametros PLRC
+  - name: Atom Programas - Cedentes
+    description: Atom Programas PLRC
+  - name: Atom Programas - Dados Desembolso
+    description: Atom Programas PLRC
+  - name: Atom Programas - Lote Clientes
+    description: Atom Programas PLRC
+  - name: Atom Programas - Onboarding
+    description: Atom Programas PLRC
+  - name: Atom Programas - Programas
+    description: Atom Programas PLRC
+  - name: Atom Programas - Sacados
+    description: Atom Programas PLRC
+  - name: Atom Programas - Totalizadores
+    description: Atom Programas PLRC
+  - name: Atom Titulos - Ativacao Lote
+    description: Atom Titulos PLRC
+  - name: Atom Titulos - Cobranca Lote
+    description: Atom Titulos PLRC
+  - name: Atom Titulos - Dashboard
+    description: Atom Titulos PLRC
+  - name: Atom Titulos - Dashboard Filtros
+    description: Atom Titulos PLRC
+  - name: Atom Titulos - Listar Contrapartes
+    description: Atom Titulos PLRC
+  - name: Atom Titulos - Operacoes
+    description: Atom Titulos PLRC
+  - name: Atom Titulos - Processamento Desembolso
+    description: Atom Titulos PLRC
+  - name: Atom Titulos - Status Processamento Lote
+    description: Atom Titulos PLRC
+  - name: Atom Titulos - Titulos
+    description: Atom Titulos PLRC
+  - name: Orch Configura Produtos - Catalogo Produtos Global
+    description: Orch Configura Produtos PLRC
+  - name: Orch Configura Produtos - Configura Produtos
+    description: Orch Configura Produtos PLRC
+  - name: Orch Enquadramento Titulo - Contratacao
+    description: Orch Enquadramento Titulo
+  - name: Orch Enquadramento Titulo - Lotes
+    description: Orch Enquadramento Titulo
+  - name: Orch Integracao - Integracao Registro Duplicata
+    description: Orch Integracao PLRC
+  - name: Orch Integração - Onboarding
+    description: Orch Integracao PLRC
+  - name: Orch Programas - Cedentes
+    description: Orquestrador Programas PLRC
+  - name: Orch Programas - Convenios Cobranca
+    description: Orquestrador Programas PLRC
+  - name: Orch Programas - Global
+    description: Orquestrador Programas PLRC
+  - name: Orch Programas - Grupo Economico
+    description: Orquestrador Programas PLRC
+  - name: Orch Programas - Lote Clientes
+    description: Orch Programas PLRC
+  - name: Orch Programas - Onboarding
+    description: Orquestrador Programas PLRC
+  - name: Orch Programas - Programas
+    description: Orquestrador Programas PLRC
+  - name: Orch Programas - Sacados
+    description: Orquestrador Programas PLRC
+  - name: Orch Relatorios - Relatorios Titulos
+    description: Orch Relatorios PLRC
+  - name: Orch Titulos - Ativacao - Lote
+    description: Orch Titulos PLRC
+  - name: Orch Titulos - Desembolso Informacoes
+    description: Orch Titulos PLRC
+  - name: Orch Titulos - Lotes - Processamento Cobrança
+    description: Orch Titulos PLRC
+  - name: Orch Titulos - Processamento Formalizacao
+    description: Orch Titulos PLRC
+  - name: Orch Titulos - Processamento Tesouraria
+    description: Orch Titulos PLRC
+  - name: Stat Motor Processo - Processamento Operacoes
+    description: Stat Motor Processo PLRC
+  - name: api-utils
+    description: the api-utils API
+  - name: bffPortal
+    description: the bffPortal API
+  - name: j_security_check
+    description: the j_security_check API
+paths:
+  /v2/produtos/{codigo}:
+    get:
+      tags:
+        - Orch Configura Produtos - Configura Produtos
+      operationId: consultarProdutoV2
+      parameters:
+        - name: codigo
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProdutoV2Response'
+    put:
+      tags:
+        - Atom Configura Produtos - Catalogo Produtos
+      operationId: atualizarProdutoV2
+      parameters:
+        - name: codigo
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProdutoV2Update'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProdutoV2Insert'
+  /v1/programas/{codigoPrograma}:
+    get:
+      tags:
+        - Orch Programas - Programas
+      operationId: consultarProgramaPorCodigo
+      parameters:
+        - name: codigoPrograma
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProgramaORCHResponse'
+    put:
+      tags:
+        - Orch Programas - Programas
+      operationId: atualizarProgramaPorCodigo
+      parameters:
+        - name: codigoPrograma
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProgramaAtualizarORCHRequest'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProgramaORCHResponse'
+    delete:
+      tags:
+        - Atom Programas - Programas
+      operationId: desabilitarProgramaPorCodigo
+      parameters:
+        - name: codigoPrograma
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+  /v1/programas/{codigoPrograma}/sacados/{cdSacado}:
+    put:
+      tags:
+        - Atom Programas - Sacados
+      operationId: atualizarSacado
+      parameters:
+        - name: codigoPrograma
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+        - name: cdSacado
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AtualizarSacadoRequest'
+        required: true
+      responses:
+        '200':
+          description: OK
+  /v1/programas/{codigoPrograma}/participante-onboarding/{cdParticipantePrograma}/confirmacao-manual:
+    put:
+      tags:
+        - Orch Programas - Onboarding
+      operationId: confirmacaoOnboardingManual
+      parameters:
+        - name: codigoPrograma
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+        - name: cdParticipantePrograma
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ConfirmacaoOnboardingManualRequest'
+        required: true
+      responses:
+        '200':
+          description: OK
+  /v1/programas/{codigoPrograma}/cedentes/{cdCedentePrograma}:
+    put:
+      tags:
+        - Atom Programas - Cedentes
+      operationId: atualizarCedente
+      parameters:
+        - name: codigoPrograma
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+        - name: cdCedentePrograma
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AtualizarCedenteRequest'
+        required: true
+      responses:
+        '200':
+          description: OK
+  /v1/programas/{codigoPrograma}/cedentes/{cdCedentePrograma}/dados-desembolso/{codigoDadoDesembolso}:
+    put:
+      tags:
+        - Atom Programas - Dados Desembolso
+      operationId: atualizarDadosDesembolso
+      parameters:
+        - name: codigoPrograma
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+        - name: cdCedentePrograma
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+        - name: codigoDadoDesembolso
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DadosDesembolsoResponse'
+  /v1/produtos/{codigoModalidadeCatalogoProduto}:
+    put:
+      tags:
+        - Atom Configura Produtos - Catalogo Produtos
+      operationId: atualizarStatusProduto
+      parameters:
+        - name: codigoModalidadeCatalogoProduto
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AtualizarStatusProdutoRequest'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Produto'
+    delete:
+      tags:
+        - Atom Configura Produtos - Catalogo Produtos
+      operationId: deletarProduto
+      parameters:
+        - name: codigoModalidadeCatalogoProduto
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+  /v1/parametros:
+    get:
+      tags:
+        - Atom Parametros - Catalogo de Parametros
+      operationId: consultarTodosParametros
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Parametros'
+    put:
+      tags:
+        - Atom Parametros - Catalogo de Parametros
+      operationId: atualizarParametrosPorNome
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Parametros'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Parametros'
+  /v1/lote-enquadramento-titulo/{codigoLote}/otimizacao:
+    put:
+      tags:
+        - Atom Enquadramento Titulo - Lote Enquadramento
+      operationId: atualizarTipoOtimizacao
+      parameters:
+        - name: codigoLote
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AtualizarTipoOtimizacaoLoteRequest'
+      responses:
+        '200':
+          description: OK
+  /v1/lote-enquadramento-titulo/excluir:
+    put:
+      tags:
+        - Atom Enquadramento Titulo - Lotes -Titulos
+      operationId: excluirLotes
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ExcluirLoteEnquadramentoRequest'
+        required: true
+      responses:
+        '200':
+          description: OK
+  /v2/produtos:
+    get:
+      tags:
+        - Orch Configura Produtos - Configura Produtos
+      operationId: listarProdutosV2
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ProdutoV2Listagem'
+    post:
+      tags:
+        - Orch Configura Produtos - Configura Produtos
+      operationId: criarProdutoV2
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProdutoV2Insert'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProdutoV2InsertResponse'
+  /v1/titulos/upload:
+    post:
+      tags:
+        - Atom Titulos - Titulos
+      operationId: uploadTitulos
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              required:
+                - file
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Response'
+  /v1/relatorios/titulos:
+    post:
+      tags:
+        - Orch Relatorios - Relatorios Titulos
+      operationId: gerarRelatorioTitulos
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RelatoriosRequest'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Excel'
+  /v1/programas:
+    get:
+      tags:
+        - Orch Programas - Programas
+      operationId: consultarTodosProgramas
+      parameters:
+        - name: codigoPrograma
+          in: query
+          required: false
+          schema:
+            type: array
+            items:
+              type: integer
+              format: int64
+        - name: nomePrograma
+          in: query
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ProgramaORCHResponse'
+    post:
+      tags:
+        - Orch Programas - Programas
+      operationId: salvarPrograma
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProgramaORCHRequest'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProgramaORCHResponse'
+  /v1/programas/{codigoPrograma}/sacados:
+    get:
+      tags:
+        - Orch Programas - Sacados
+      operationId: listarSacadosPorFiltro
+      parameters:
+        - name: codigoPrograma
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+        - name: paginacaoPagina
+          in: query
+          required: true
+          schema:
+            type: integer
+            format: int64
+        - name: paginacaoLimite
+          in: query
+          required: true
+          schema:
+            type: integer
+            format: int64
+        - name: razaoSocial
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: cnpj
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: paginacaoOrdenacao
+          in: query
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/PrlcSacadoResponse'
+    post:
+      tags:
+        - Orch Programas - Sacados
+      operationId: salvarPessoaSacado
+      parameters:
+        - name: codigoPrograma
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PrlcSacadoRequest'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PrlcSacadoResponse'
+    delete:
+      tags:
+        - Atom Programas - Sacados
+      operationId: desabilitarSacadosPorCodigos
+      parameters:
+        - name: codigoPrograma
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                type: integer
+                format: int64
+      responses:
+        '200':
+          description: OK
+  /v1/programas/{codigoPrograma}/sacados/{cdSacado}/conta-movimento:
+    get:
+      tags:
+        - Atom Programas - Sacados
+      operationId: consultarContaMovimentoSacado
+      parameters:
+        - name: cdSacado
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+        - name: codigoPrograma
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ContaMovimentoResponse'
+    post:
+      tags:
+        - Atom Programas - Sacados
+      operationId: salvarContaMovimentoSacado
+      parameters:
+        - name: cdSacado
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+        - name: codigoPrograma
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ContaMovimentoRequest'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ContaMovimentoResponse'
+    delete:
+      tags:
+        - Atom Programas - Sacados
+      operationId: deletarContaMovimentoSacado
+      parameters:
+        - name: cdSacado
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+        - name: codigoPrograma
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+  /v1/programas/{codigoPrograma}/exportar-clientes:
+    post:
+      tags:
+        - Orch Integração - Onboarding
+      operationId: exportarCLientes
+      parameters:
+        - name: codigoPrograma
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ExportarCLientesRequest'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/vnd.ms-excel:
+              schema:
+                type: string
+                format: binary
+  /v1/programas/{codigoPrograma}/cedentes:
+    get:
+      tags:
+        - Orch Programas - Cedentes
+      operationId: listarCedentesPorFiltro
+      parameters:
+        - name: codigoPrograma
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+        - name: paginacaoPagina
+          in: query
+          required: true
+          schema:
+            type: integer
+            format: int64
+        - name: paginacaoLimite
+          in: query
+          required: true
+          schema:
+            type: integer
+            format: int64
+        - name: razaoSocial
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: cnpj
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: paginacaoOrdenacao
+          in: query
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/CedenteProgramaResponse'
+    post:
+      tags:
+        - Orch Programas - Cedentes
+      operationId: salvarPessoaCedente
+      parameters:
+        - name: codigoPrograma
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PrlcCedenteRequest'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PrlcCedenteResponse'
+    delete:
+      tags:
+        - Atom Programas - Cedentes
+      operationId: desabilitarCedentesPorCodigos
+      parameters:
+        - name: codigoPrograma
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                type: integer
+                format: int64
+      responses:
+        '200':
+          description: OK
+  /v1/programas/{codigoPrograma}/cedentes/{codigoCedentePrograma}/convenio-cobranca:
+    post:
+      tags:
+        - Orch Programas - Cedentes
+      operationId: salvarConvenioCobranca
+      parameters:
+        - name: codigoPrograma
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+        - name: codigoCedentePrograma
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ConvenioCobrancaORCHRequest'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConvenioCobrancaORCHResponse'
+  /v1/programas/{codigoPrograma}/cedentes/{cdCedentePrograma}/dados-desembolso:
+    get:
+      tags:
+        - Atom Programas - Dados Desembolso
+      operationId: consultarDadosDesembolso
+      parameters:
+        - name: codigoPrograma
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+        - name: cdCedentePrograma
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DadosDesembolsoResponse'
+    post:
+      tags:
+        - Atom Programas - Dados Desembolso
+      operationId: salvarDadosDesembolso
+      parameters:
+        - name: codigoPrograma
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+        - name: cdCedentePrograma
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DadosDesembolsoRequest'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DadosDesembolsoResponse'
+    delete:
+      tags:
+        - Atom Programas - Dados Desembolso
+      operationId: desabilitarDadosDesembolso
+      parameters:
+        - name: codigoPrograma
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+        - name: cdCedentePrograma
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                type: integer
+                format: int64
+      responses:
+        '200':
+          description: OK
+  /v1/programas/lote-clientes/upload:
+    post:
+      tags:
+        - Orch Programas - Lote Clientes
+      operationId: salvarLoteClientes
+      parameters:
+        - name: codigoPrograma
+          in: query
+          required: true
+          schema:
+            type: integer
+            format: int64
+        - name: tipoPessoa
+          in: query
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              required:
+                - file
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProcessamentoClienteArquivoOrchResponse'
+  /v1/produtos:
+    get:
+      tags:
+        - Orch Configura Produtos - Configura Produtos
+      operationId: listarProdutos
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Produto'
+    post:
+      tags:
+        - Atom Configura Produtos - Catalogo Produtos
+      operationId: salvarProduto
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SalvarProdutoRequest'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Produto'
+  /v1/operacoes/{codigoOperacao}/tesouraria-retry:
+    post:
+      tags:
+        - Orch Titulos - Processamento Tesouraria
+      operationId: processarTIR
+      parameters:
+        - name: codigoOperacao
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CamundaResponse'
+  /v1/operacoes/{codigoOperacao}/tesouraria-manual:
+    post:
+      tags:
+        - Orch Titulos - Processamento Tesouraria
+      operationId: retornoTesouraria
+      parameters:
+        - name: codigoOperacao
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TesourariaIntegracaoRetornoRequest'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CamundaResponse'
+  /v1/operacoes/{codigoOperacao}/reprocessar-desembolso:
+    post:
+      tags:
+        - Atom Titulos - Processamento Desembolso
+      operationId: reprocessarDesembolsoOperacao
+      parameters:
+        - name: codigoOperacao
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+  /v1/operacoes/{codigoOperacao}/desembolso-manual:
+    post:
+      tags:
+        - Atom Titulos - Processamento Desembolso
+      operationId: desembolsoManualPorOperacao
+      parameters:
+        - name: codigoOperacao
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DesembolsoManualRequest'
+        required: true
+      responses:
+        '200':
+          description: OK
+  /v1/lotes/{codigoLote}/retoma-processamento-operacoes:
+    post:
+      tags:
+        - Stat Motor Processo - Processamento Operacoes
+      operationId: retomaProcessamento
+      parameters:
+        - name: codigoLote
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StatusProcessoRetorno'
+  /v1/lotes/{codigoLote}/reprocessar-registro-duplicatas:
+    post:
+      tags:
+        - Orch Integracao - Integracao Registro Duplicata
+      operationId: reprocessarLoteRegistroDuplicatas
+      parameters:
+        - name: codigoLote
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+  /v1/lotes/{codigoLote}/reprocessar-desembolso:
+    post:
+      tags:
+        - Atom Titulos - Processamento Desembolso
+      operationId: reprocessarDesembolso
+      parameters:
+        - name: codigoLote
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+  /v1/lotes/{codigoLote}/formalizacao-manual:
+    post:
+      tags:
+        - Orch Titulos - Processamento Formalizacao
+      operationId: formalizacaoManual
+      parameters:
+        - name: codigoLote
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FormalizacaoManualRequest'
+        required: true
+      responses:
+        '200':
+          description: OK
+  /v1/lotes/{codigoLote}/desembolso-manual:
+    post:
+      tags:
+        - Atom Titulos - Processamento Desembolso
+      operationId: desembolsoManual
+      parameters:
+        - name: codigoLote
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DesembolsoManualRequest'
+        required: true
+      responses:
+        '200':
+          description: OK
+  /v1/lotes/{codigoLote}/cobranca-manual:
+    post:
+      tags:
+        - Orch Titulos - Lotes - Processamento Cobrança
+      operationId: cobrancaManual
+      parameters:
+        - name: codigoLote
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+  /v1/lotes/{codigoLote}/cancela-operacoes:
+    post:
+      tags:
+        - Stat Motor Processo - Processamento Operacoes
+      operationId: cancelaProcessamento
+      parameters:
+        - name: codigoLote
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StatusProcessoRetorno'
+  /v1/lotes/{codigoLote}/ativacao-manual:
+    post:
+      tags:
+        - Orch Titulos - Ativacao - Lote
+      operationId: ativacaoManual
+      parameters:
+        - name: codigoLote
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+  /v1/lote-enquadramento-titulo/{codigoLote}/resumo:
+    post:
+      tags:
+        - Orch Enquadramento Titulo - Contratacao
+      operationId: resumoLoteEnquadramento
+      parameters:
+        - name: codigoLote
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+        - name: documentoCedente
+          in: query
+          required: false
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ResumoRequest'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResumoLoteEnquadramentoResponse'
+  /v1/lote-enquadramento-titulo/{codigoLote}/reprocessar:
+    post:
+      tags:
+        - Atom Enquadramento Titulo - Lote Enquadramento
+      operationId: reprocessarEnquadramento
+      parameters:
+        - name: codigoLote
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+  /v1/lote-enquadramento-titulo/{codigoLote}/processa-boleta:
+    post:
+      tags:
+        - Orch Enquadramento Titulo - Contratacao
+      operationId: processaBoleta
+      parameters:
+        - name: codigoLote
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BoletaLoteRequest'
+        required: true
+      responses:
+        '200':
+          description: OK
+  /v1/lote-enquadramento-titulo/{codigoLote}/exportar:
+    post:
+      tags:
+        - Atom Enquadramento Titulo - Lote Enquadramento
+      operationId: exportarLote
+      parameters:
+        - name: codigoLote
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ExportarLoteRequest'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/vnd.ms-excel:
+              schema:
+                type: string
+                format: binary
+            application/json:
+              schema:
+                type: string
+                format: binary
+  /v1/lote-enquadramento-titulo/upload:
+    post:
+      tags:
+        - Atom Enquadramento Titulo - Lote Enquadramento
+      operationId: uploadLoteEnquadramento
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
+      responses:
+        '200':
+          description: OK
+  /v1/iof:
+    get:
+      tags:
+        - Atom Configura Produtos - Iof
+      operationId: consultarIof
+      parameters:
+        - name: codigoProduto
+          in: query
+          required: false
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/IofListagem'
+    post:
+      tags:
+        - Atom Configura Produtos - Iof
+      operationId: inserirIof
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Iof'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IofListagem'
+  /v1/dashboard/grupos-economicos/{codigoGrupoEconomico}/lotes/{codigoLote}/partes/{codigoParte}/operacoes/filtro:
+    post:
+      tags:
+        - Atom Titulos - Dashboard Filtros
+      operationId: consultarOperacoesComFiltro
+      parameters:
+        - name: codigoGrupoEconomico
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+        - name: codigoLote
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+        - name: codigoParte
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FiltroNivelOperacaoRequest'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/OperacoesResponse'
+  /v1/dashboard/grupos-economicos/{codigoGrupoEconomico}/lotes/{codigoLote}/partes/filtro:
+    post:
+      tags:
+        - Atom Titulos - Dashboard Filtros
+      operationId: consultarPartesComFiltro
+      parameters:
+        - name: codigoGrupoEconomico
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+        - name: codigoLote
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FiltroNivelParteRequest'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ParteResponse'
+  /v1/dashboard/grupos-economicos/{codigoGrupoEconomico}/lotes/filtro:
+    post:
+      tags:
+        - Atom Titulos - Dashboard Filtros
+      operationId: consultarLotesComFiltro
+      parameters:
+        - name: codigoGrupoEconomico
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FiltroNivelLoteRequest'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/LoteResponse'
+  /v1/dashboard/grupos-economicos/filtro:
+    post:
+      tags:
+        - Atom Titulos - Dashboard Filtros
+      operationId: consultarGruposEconomicosComFiltro
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FiltroNivelGrupoEconomicoRequest'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GrupoEconomicoDashboardResponse'
+  /v1/cedentes/{cdCedentePrograma}/conta-movimento:
+    get:
+      tags:
+        - Atom Programas - Cedentes
+      operationId: consultarContaMovimento
+      parameters:
+        - name: cdCedentePrograma
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ContaMovimentoResponse'
+    post:
+      tags:
+        - Atom Programas - Cedentes
+      operationId: salvarContaMovimento
+      parameters:
+        - name: cdCedentePrograma
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ContaMovimentoRequest'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ContaMovimentoResponse'
+    delete:
+      tags:
+        - Atom Programas - Cedentes
+      operationId: deletarContaMovimento
+      parameters:
+        - name: cdCedentePrograma
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+  /j_security_check:
+    post:
+      tags:
+        - j_security_check
+      summary: Login
+      operationId: login
+      parameters:
+        - name: j_username
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: j_password
+          in: query
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /global/pessoas:
+    post:
+      tags:
+        - Atom Dados Cadastrais Pessoa - Dados Principais
+      operationId: consultarPessoas
+      parameters:
+        - name: nomePessoa
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ObterDadosPrincipaisClienteResponse'
+  /api-utils/logger:
+    post:
+      tags:
+        - api-utils
+      summary: devolve os logs da aplicação.
+      operationId: logger
+      requestBody:
+        content:
+          application/json;charset=UTF-8:
+            schema:
+              type: array
+              description: logs
+              items:
+                $ref: '#/components/schemas/LogRepresentation'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json;charset=UTF-8:
+              schema:
+                type: object
+        '201':
+          description: Created
+          content:
+            application/json;charset=UTF-8:
+              schema:
+                type: object
+        '401':
+          description: Unauthorized
+          content:
+            application/json;charset=UTF-8:
+              schema:
+                type: object
+        '403':
+          description: Forbidden
+          content:
+            application/json;charset=UTF-8:
+              schema:
+                type: object
+        '404':
+          description: Not Found
+          content:
+            application/json;charset=UTF-8:
+              schema:
+                type: object
+  /api-security/refresh:
+    post:
+      tags:
+        - Api Security
+      summary: Refresh Token
+      operationId: refreshToken
+      parameters:
+        - name: token
+          in: query
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /v2/dashboard/grupos-economicos/{codigoGrupoEconomico}/lotes/{codigoLote}/partes/{codigoParte}/contrapartes:
+    get:
+      tags:
+        - Atom Titulos - Listar Contrapartes
+      operationId: listarContrapartes
+      parameters:
+        - name: codigoGrupoEconomico
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+        - name: codigoLote
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+        - name: codigoParte
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+        - name: paginacaoPagina
+          in: query
+          required: true
+          schema:
+            minimum: 1
+            type: integer
+            format: int64
+        - name: paginacaoLimite
+          in: query
+          required: true
+          schema:
+            maximum: 100
+            minimum: 1
+            type: integer
+            format: int64
+        - name: nuCpfCnpjContraparte
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: codigoEtapa
+          in: query
+          required: false
+          schema:
+            type: integer
+            format: int64
+        - name: codigoStatusOperacao
+          in: query
+          required: false
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ContrapartesResponse'
+  /v1/titulos/statusArquivo:
+    get:
+      tags:
+        - Atom Titulos - Titulos
+      operationId: consultaStatusArquivo
+      parameters:
+        - name: idTracking
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseStatus'
+  /v1/programas/{codigoPrograma}/sacados-paginado:
+    get:
+      tags:
+        - Orch Programas - Sacados
+      operationId: listarSacadosPorFiltroPaginado
+      parameters:
+        - name: codigoPrograma
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+        - name: razaoSocial
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: cnpj
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: itensPorPagina
+          in: query
+          required: false
+          schema:
+            type: integer
+            format: int32
+            default: 10
+        - name: pagina
+          in: query
+          required: false
+          schema:
+            type: integer
+            format: int32
+            default: 1
+        - name: ordem
+          in: query
+          required: false
+          schema:
+            type: string
+            default: ASC
+        - name: dataInicio
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: dataFim
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: statusParticipantePrograma
+          in: query
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SacadoResponsePaginado'
+  /v1/programas/{codigoPrograma}/clientes/status:
+    get:
+      tags:
+        - Atom Programas - Totalizadores
+      operationId: consultarTotalSacadosECedentesPorStatus
+      parameters:
+        - name: codigoPrograma
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+        - name: tipoCliente
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/QuantidadeClientesPorStatus'
+  /v1/programas/{codigoPrograma}/cedentes-paginado:
+    get:
+      tags:
+        - Orch Programas - Cedentes
+      operationId: consultarCedentesProgramaPaginado
+      parameters:
+        - name: codigoPrograma
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+        - name: razaoSocial
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: cnpj
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: itensPorPagina
+          in: query
+          required: false
+          schema:
+            type: integer
+            format: int32
+            default: 10
+        - name: pagina
+          in: query
+          required: false
+          schema:
+            type: integer
+            format: int32
+            default: 1
+        - name: ordenarPor
+          in: query
+          required: false
+          schema:
+            type: string
+            default: DATA_INCLUSAO
+        - name: ordem
+          in: query
+          required: false
+          schema:
+            type: string
+            default: ASC
+        - name: dataInicio
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: dataFim
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: statusParticipantePrograma
+          in: query
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CedentesPaginadoResponse'
+  /v1/programas/lote-clientes/{idTracking}/status:
+    get:
+      tags:
+        - Atom Programas - Lote Clientes
+      operationId: consultarLoteClientes
+      parameters:
+        - name: idTracking
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: tipoPessoa
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: status
+          in: query
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProcessamentoClienteArquivoStatusResponse'
+  /v1/programas/lote-clientes/{idTracking}/clientes:
+    get:
+      tags:
+        - Atom Programas - Lote Clientes
+      operationId: consultarClientes
+      parameters:
+        - name: idTracking
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: tipoPessoa
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ProcessamentoClienteLinhaResponse'
+  /v1/produtos/filtro-programa:
+    get:
+      tags:
+        - Orch Configura Produtos - Configura Produtos
+      operationId: listarProdutosPLRCGlobal
+      parameters:
+        - name: nome
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: codigo
+          in: query
+          required: false
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ProdutoGlobal'
+  /v1/parte/{codigoParte}/desembolso:
+    get:
+      tags:
+        - Orch Titulos - Desembolso Informacoes
+      operationId: exibirDadosDesembolso
+      parameters:
+        - name: codigoParte
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DadosDesembolsoResponse'
+  /v1/operacoes/{codigoOperacao}:
+    get:
+      tags:
+        - Atom Titulos - Operacoes
+      operationId: consultarOperacao
+      parameters:
+        - name: codigoOperacao
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OperacoesResponse'
+  /v1/operacoes/{codigoOperacao}/tesouraria:
+    get:
+      tags:
+        - Atom Titulos - Operacoes
+      operationId: consultarTesouraria
+      parameters:
+        - name: codigoOperacao
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TesourariaResponse'
+  /v1/operacao/{codigoOperacao}/desembolso:
+    get:
+      tags:
+        - Orch Titulos - Desembolso Informacoes
+      operationId: exibirDadosDesembolsoOperacao
+      parameters:
+        - name: codigoOperacao
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DadosDesembolsoResponse'
+  /v1/onboarding/participantes/integracao:
+    get:
+      tags:
+        - Atom Programas - Onboarding
+      operationId: consultarObservacaoParticipante
+      parameters:
+        - name: tipoRelacionamento
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: codigoProgramaParticipante
+          in: query
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ObservacaoParticipanteResponse'
+  /v1/lotes/{codigoLote}/download-arquivo-cobranca:
+    get:
+      tags:
+        - Atom Titulos - Cobranca Lote
+      operationId: downloadArquivoCobranca
+      parameters:
+        - name: codigoLote
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ArquivoBase64Response'
+  /v1/lotes/{codigoLote}/download-arquivo-ativacao:
+    get:
+      tags:
+        - Atom Titulos - Ativacao Lote
+      operationId: downloadArquivoAtivacao
+      parameters:
+        - name: codigoLote
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ArquivoBase64Response'
+  /v1/lotes/status:
+    get:
+      tags:
+        - Atom Titulos - Status Processamento Lote
+      operationId: consultarStatusProcessamentoLote
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/StatusProcessamentoLoteResponse'
+  /v1/lote-enquadramento-titulo:
+    get:
+      tags:
+        - Orch Enquadramento Titulo - Lotes
+      operationId: consultaLotesPaginado
+      parameters:
+        - name: codigoLote
+          in: query
+          required: false
+          schema:
+            type: integer
+            format: int64
+        - name: dataCriacao
+          in: query
+          required: false
+          schema:
+            type: string
+            format: date
+        - name: nomeCedente
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: documentoCedente
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: statusLote
+          in: query
+          required: false
+          schema:
+            type: string
+            enum:
+              - CRIADO
+              - EM_VALIDACAO
+              - VALIDADO
+              - ENVIADO_PARA_CONTRATACAO
+              - ERRO
+              - CANCELADO
+              - OTIMIZADO
+              - CONTRATACAO_PARCIAL
+              - CONTRATADO
+        - name: ordenarPor
+          in: query
+          required: false
+          schema:
+            type: string
+            default: DATA_CRIACAO
+            enum:
+              - DATA_CRIACAO
+        - name: ordem
+          in: query
+          required: false
+          schema:
+            type: string
+            default: ASC
+            enum:
+              - ASC
+              - DESC
+        - name: itensPorPagina
+          in: query
+          required: false
+          schema:
+            type: integer
+            format: int32
+            default: 10
+        - name: pagina
+          in: query
+          required: false
+          schema:
+            type: integer
+            format: int32
+            default: 1
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LotesPaginadoResponse'
+  /v1/lote-enquadramento-titulo/{codigoLote}/titulos:
+    get:
+      tags:
+        - Atom Enquadramento Titulo - Titulos
+      operationId: consultaTitulosPaginado
+      parameters:
+        - name: codigoLote
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+        - name: regraStatusTitulo
+          in: query
+          required: true
+          schema:
+            type: string
+            enum:
+              - APROVADO_SOLVER
+              - REPROVADO
+              - PENDENTE_SOLVER
+        - name: documentoCedente
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: itensPorPagina
+          in: query
+          required: false
+          schema:
+            type: integer
+            format: int32
+            default: 10
+        - name: pagina
+          in: query
+          required: false
+          schema:
+            type: integer
+            format: int32
+            default: 1
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TitulosPaginadoResponse'
+  /v1/lote-enquadramento-titulo/{codigoLote}/restricoes-boletagem:
+    get:
+      tags:
+        - Orch Enquadramento Titulo - Lotes
+      operationId: consultaObrigatoriedadeRegistro
+      parameters:
+        - name: codigoLote
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestricoesBoletagemResponse'
+  /v1/lote-enquadramento-titulo/{codigoLote}/progresso-validacao:
+    get:
+      tags:
+        - Atom Enquadramento Titulo - Lote Enquadramento
+      operationId: progressoValidacao
+      parameters:
+        - name: codigoLote
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProgressoValidacaoResponse'
+  /v1/lote-enquadramento-titulo/{codigoLote}/processamento-etapas:
+    get:
+      tags:
+        - Atom Enquadramento Titulo - Lote Enquadramento
+      operationId: processamentoEtapasLote
+      parameters:
+        - name: codigoLote
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ProcessamentoEtapasResponse'
+  /v1/lote-enquadramento-titulo/{codigoLote}/detalhes-arquivo:
+    get:
+      tags:
+        - Atom Enquadramento Titulo - Lote Enquadramento
+      operationId: detalheArquivo
+      parameters:
+        - name: codigoLote
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TBLoteEnquadramentoArquivoResponse'
+  /v1/lote-enquadramento-titulo/{codigoLote}/detalhes-arquivo/exportar:
+    get:
+      tags:
+        - Atom Enquadramento Titulo - Lote Enquadramento
+      operationId: exportarDetalhesArquivo
+      parameters:
+        - name: codigoLote
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            application/vnd.ms-excel:
+              schema:
+                type: string
+                format: binary
+            application/json:
+              schema:
+                type: string
+                format: binary
+  /v1/lote-enquadramento-titulo/{codigoLote}/datas-possiveis-desembolso:
+    get:
+      tags:
+        - Orch Enquadramento Titulo - Lotes
+      operationId: consultarDatasDesembolso
+      parameters:
+        - name: codigoLote
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DatasDesembolsoResponse'
+  /v1/lote-enquadramento-titulo/{codigoLote}/cedentes-titulos:
+    get:
+      tags:
+        - Atom Enquadramento Titulo - Lote Enquadramento
+      operationId: consultaCedentes
+      parameters:
+        - name: codigoLote
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConsultaCedentesResponse'
+  /v1/lote-enquadramento-titulo/contador-status:
+    get:
+      tags:
+        - Atom Enquadramento Titulo - Lote Enquadramento
+      operationId: contadorStatusLoteEnquadramento
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/StatusLoteEnquadramentoResponse'
+  /v1/grupos-economicos/filtros:
+    get:
+      tags:
+        - Orch Programas - Grupo Economico
+      operationId: consultarPeloNomeGrupoEconomico
+      parameters:
+        - name: nomeGrupoEconomico
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GrupoEconomicoResponse'
+  /v1/global/produtos:
+    get:
+      tags:
+        - Orch Configura Produtos - Catalogo Produtos Global
+      operationId: listarProdutosGlobal
+      parameters:
+        - name: nome
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: codigo
+          in: query
+          required: false
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ProdutoGlobal'
+  /v1/global/pessoas/sacados:
+    get:
+      tags:
+        - Orch Programas - Global
+      operationId: listarPessoaGlobalFiltroSacado
+      parameters:
+        - name: paginacaoPagina
+          in: query
+          required: true
+          schema:
+            type: integer
+            format: int64
+        - name: paginacaoLimite
+          in: query
+          required: true
+          schema:
+            type: integer
+            format: int64
+        - name: codigoPrograma
+          in: query
+          required: false
+          schema:
+            type: integer
+            format: int64
+        - name: razaoSocial
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: cnpj
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: paginacaoOrdenacao
+          in: query
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/PessoaGlobalResponse'
+  /v1/global/pessoas/cedentes:
+    get:
+      tags:
+        - Orch Programas - Global
+      operationId: listarCedentesPorFiltroGlobal
+      parameters:
+        - name: paginacaoPagina
+          in: query
+          required: true
+          schema:
+            type: integer
+            format: int64
+        - name: paginacaoLimite
+          in: query
+          required: true
+          schema:
+            type: integer
+            format: int64
+        - name: codigoPrograma
+          in: query
+          required: false
+          schema:
+            type: integer
+            format: int64
+        - name: razaoSocial
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: cnpj
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: paginacaoOrdenacao
+          in: query
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/PessoaGlobalResponse'
+  /v1/global/papeis:
+    get:
+      tags:
+        - Orch Programas - Global
+      operationId: consultarPapelPessoaRelacionamento
+      parameters:
+        - name: cpf-Cnpj
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/PapelGlobalOrchResponse'
+  /v1/global/grupos-economicos:
+    get:
+      tags:
+        - Orch Programas - Global
+      operationId: listarGruposEconomicosGlobal
+      parameters:
+        - name: nome
+          in: query
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GrupoEconomicoGlobalResponse'
+  /v1/global/contas/{nuCpfCnpjCedente}:
+    get:
+      tags:
+        - Orch Programas - Global
+      operationId: consultarContasCedenteGlobal
+      parameters:
+        - name: nuCpfCnpjCedente
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: nuBanco
+          in: query
+          required: false
+          schema:
+            type: integer
+            format: int32
+            default: 161
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ContaGlobalResponse'
+  /v1/global/bancos:
+    get:
+      tags:
+        - Orch Programas - Global
+      operationId: consultarBancos
+      parameters:
+        - name: tipoOrdenacao
+          in: query
+          required: false
+          schema:
+            type: string
+            default: NOME_DESC
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BancoORCHResponse'
+  /v1/global/bancos/{cdBanco}/agencias:
+    get:
+      tags:
+        - Orch Programas - Global
+      operationId: consultarAgenciasCodigo
+      parameters:
+        - name: cdBanco
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/AgenciaORCHResponse'
+  /v1/dashboard/partes:
+    get:
+      tags:
+        - Atom Titulos - Dashboard Filtros
+      operationId: consultaPartesDia
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DashboardParteResponse'
+  /v1/dashboard/grupos-economicos:
+    get:
+      tags:
+        - Atom Titulos - Dashboard
+      operationId: consultarGruposEconomicos
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GrupoEconomicoDashboardResponse'
+  /v1/dashboard/grupos-economicos/{codigoGrupoEconomico}/lotes:
+    get:
+      tags:
+        - Atom Titulos - Dashboard
+      operationId: consultarLotes
+      parameters:
+        - name: codigoGrupoEconomico
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/LoteResponse'
+  /v1/dashboard/grupos-economicos/{codigoGrupoEconomico}/lotes/{codigoLote}/partes:
+    get:
+      tags:
+        - Atom Titulos - Dashboard
+      operationId: consultarPartes
+      parameters:
+        - name: codigoGrupoEconomico
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+        - name: codigoLote
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ParteResponse'
+  /v1/dashboard/grupos-economicos/{codigoGrupoEconomico}/lotes/{codigoLote}/partes/{codigoParte}/operacoes:
+    get:
+      tags:
+        - Atom Titulos - Dashboard
+      operationId: consultarOperacoes
+      parameters:
+        - name: codigoParte
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+        - name: codigoGrupoEconomico
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+        - name: codigoLote
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/OperacoesResponse'
+  /v1/dashboard/grupos-economicos/{codigoGrupoEconomico}/lotes/{codigoLote}/partes/{codigoParte}/operacoes/{codigoOperacao}/titulos:
+    get:
+      tags:
+        - Atom Titulos - Dashboard
+      operationId: consultarTitulos
+      parameters:
+        - name: codigoGrupoEconomico
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+        - name: codigoLote
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+        - name: codigoParte
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+        - name: codigoOperacao
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+        - name: filtroNumeroTitulo
+          in: query
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/TitulosResponse'
+  /v1/dashboard/contra-partes:
+    get:
+      tags:
+        - Atom Titulos - Dashboard Filtros
+      operationId: consultaContraPartesDia
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DashboardContraParteResponse'
+  /v1/cobr/convenios-cobranca:
+    get:
+      tags:
+        - Orch Programas - Convenios Cobranca
+      operationId: listarConvenios
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ConvenioCliente'
+  /bffPortal:
+    get:
+      tags:
+        - bffPortal
+      operationId: searchItems
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ResultRepresentation'
+      security:
+        - bearerAuth: []
+  /api-utils/status:
+    get:
+      tags:
+        - api-utils
+      summary: status
+      operationId: statusUsingGET
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json;charset=UTF-8:
+              schema:
+                $ref: '#/components/schemas/StatusUp'
+        '401':
+          description: Unauthorized
+          content:
+            application/json;charset=UTF-8:
+              schema:
+                $ref: '#/components/schemas/StatusUp'
+        '403':
+          description: Forbidden
+          content:
+            application/json;charset=UTF-8:
+              schema:
+                $ref: '#/components/schemas/StatusUp'
+        '404':
+          description: Not Found
+          content:
+            application/json;charset=UTF-8:
+              schema:
+                $ref: '#/components/schemas/StatusUp'
+  /api-security/me:
+    get:
+      tags:
+        - Api Security
+      summary: Informações de acessos a partir das roles físicas.
+      operationId: securityInfo
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/UserRepresentation'
+  /api-security/logout:
+    get:
+      tags:
+        - Api Security
+      summary: Invalida a sessão.
+      operationId: logout
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: string
+  /v1/lote-enquadramento-titulo/{codigoLote}:
+    delete:
+      tags:
+        - Atom Enquadramento Titulo - Lotes -Titulos
+      operationId: excluirLote
+      parameters:
+        - name: codigoLote
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+components:
+  schemas:
+    ProdutoNegociacao:
+      type: object
+      properties:
+        codigoTipoRecebivel:
+          type: integer
+          format: int64
+    ProdutoV2Update:
+      type: object
+      properties:
+        flagHabilitado:
+          type: boolean
+        grupoConciliacao:
+          type: string
+          enum:
+            - EMPRESTIMO
+            - RECEBIVEL
+        flagProdutoIsentoIOF:
+          type: boolean
+        flagProdutoIOFPadrao:
+          type: boolean
+        dadosRecebiveis:
+          $ref: '#/components/schemas/ProdutoNegociacao'
+    ProdutoV2Insert:
+      type: object
+      properties:
+        flagHabilitado:
+          type: boolean
+        grupoConciliacao:
+          type: string
+          enum:
+            - EMPRESTIMO
+            - RECEBIVEL
+        flagProdutoIsentoIOF:
+          type: boolean
+        flagProdutoIOFPadrao:
+          type: boolean
+        dadosRecebiveis:
+          $ref: '#/components/schemas/ProdutoNegociacao'
+        flagAtivo:
+          type: boolean
+        codigo:
+          type: integer
+          format: int64
+    ProgramaAtualizarORCHRequest:
+      type: object
+      properties:
+        prazoRepasseMandatario:
+          type: integer
+          format: int64
+        prazoMinimoRecebivel:
+          type: integer
+          format: int64
+        cdTipoRecusaAutomatica:
+          type: integer
+          format: int64
+        nomePrograma:
+          maxLength: 50
+          minLength: 1
+          type: string
+        flContratacaoAutomatica:
+          type: boolean
+        flCheckUsuario:
+          type: boolean
+        tipoRegistroDuplicata:
+          type: string
+          enum:
+            - OBRIGATORIO
+            - OPCIONAL
+            - NAO_APLICAVEL
+        flHabilitado:
+          type: boolean
+        tipoFormalizacao:
+          $ref: '#/components/schemas/ProgramaORCHRequestTipoFormalizacao'
+        codigoProduto:
+          type: integer
+          format: int64
+        codigoGrupoEconomico:
+          type: integer
+          format: int64
+        tipoAncora:
+          $ref: '#/components/schemas/ProgramaORCHRequestTipoAncora'
+        tipoAgrupamentoDesembolso:
+          $ref: '#/components/schemas/ProgramaORCHRequestTipoAncora'
+        tipoAgrupamentoFormalizacao:
+          $ref: '#/components/schemas/ProgramaORCHRequestTipoAgrupamentoFormalizacao'
+        flAjustarProximoDiaUtil:
+          type: boolean
+        tipoLiquidacao:
+          $ref: '#/components/schemas/ProgramaORCHRequestTipoLiquidacao'
+        jurosMoraDia:
+          type: number
+        multa:
+          type: number
+    ProgramaORCHRequestTipoAgrupamentoFormalizacao:
+      type: object
+      properties:
+        codigo:
+          type: integer
+          format: int64
+    ProgramaORCHRequestTipoAncora:
+      type: object
+      properties:
+        codigo:
+          type: integer
+          format: int64
+    ProgramaORCHRequestTipoFormalizacao:
+      type: object
+      properties:
+        codigo:
+          type: integer
+          format: int64
+    ProgramaORCHRequestTipoLiquidacao:
+      type: object
+      properties:
+        codigo:
+          type: integer
+          format: int64
+    ProgramaORCHResponse:
+      type: object
+      properties:
+        prazoRepasseMandatario:
+          type: integer
+          format: int64
+        prazoMinimoRecebivel:
+          type: integer
+          format: int64
+        flComCoobrigacao:
+          type: boolean
+        cdTipoRecusaAutomatica:
+          type: integer
+          format: int64
+        codigoPrograma:
+          type: integer
+          format: int64
+        nomePrograma:
+          type: string
+        flHabilitado:
+          type: boolean
+        flContratacaoAutomatica:
+          type: boolean
+        flCheckUsuario:
+          type: boolean
+        tipoRegistroDuplicata:
+          type: string
+          enum:
+            - OBRIGATORIO
+            - OPCIONAL
+            - NAO_APLICAVEL
+        codigoProduto:
+          type: integer
+          format: int64
+        nomeProduto:
+          type: string
+        codigoGrupoEconomico:
+          type: integer
+          format: int64
+        nomeGrupoEconomico:
+          type: string
+        dsLogin:
+          type: string
+        tipoAncora:
+          $ref: '#/components/schemas/ProgramaORCHResponseTipoAncora'
+        tipoFormalizacao:
+          $ref: '#/components/schemas/ProgramaORCHResponseTipoFormalizacao'
+        tipoAgrupamentoFormalizacao:
+          $ref: '#/components/schemas/ProgramaORCHResponseTipoAgrupamentoFormalizacao'
+        tipoAgrupamentoDesembolso:
+          $ref: '#/components/schemas/ProgramaORCHResponseTipoAgrupamentoDesembolso'
+        flAjustarProximoDiaUtil:
+          type: boolean
+        tipoLiquidacao:
+          $ref: '#/components/schemas/ProgramaORCHResponseTipoLiquidacao'
+        jurosMoraDia:
+          type: number
+        multa:
+          type: number
+        flProgramaCompleto:
+          type: boolean
+    ProgramaORCHResponseTipoAgrupamentoDesembolso:
+      type: object
+      properties:
+        codigo:
+          type: integer
+          format: int64
+        descricao:
+          type: string
+    ProgramaORCHResponseTipoAgrupamentoFormalizacao:
+      type: object
+      properties:
+        codigo:
+          type: integer
+          format: int64
+        descricao:
+          type: string
+    ProgramaORCHResponseTipoAncora:
+      type: object
+      properties:
+        codigo:
+          type: integer
+          format: int64
+        descricao:
+          type: string
+    ProgramaORCHResponseTipoFormalizacao:
+      type: object
+      properties:
+        codigo:
+          type: integer
+          format: int64
+        descricao:
+          type: string
+    ProgramaORCHResponseTipoLiquidacao:
+      type: object
+      properties:
+        codigo:
+          type: integer
+          format: int64
+        descricao:
+          type: string
+    AtualizarSacadoRequest:
+      type: object
+      properties:
+        status:
+          type: string
+          enum:
+            - ONBOARDING
+            - PENDENTE
+            - CADASTRADO
+            - RECUSADO
+            - CANCELADO
+        codigoPessoa:
+          type: integer
+          format: int64
+    ConfirmacaoOnboardingManualRequest:
+      type: object
+      properties:
+        tipoCliente:
+          type: string
+        nuCpfCnpj:
+          type: string
+    AtualizarCedenteRequest:
+      type: object
+      properties:
+        status:
+          type: string
+          enum:
+            - ONBOARDING
+            - PENDENTE
+            - CADASTRADO
+            - RECUSADO
+            - CANCELADO
+        codigoPessoa:
+          type: integer
+          format: int64
+    DadosDesembolsoResponse:
+      type: object
+      properties:
+        cdDadosDesembolsoCedente:
+          type: integer
+          format: int64
+        cdTipoDesembolso:
+          type: integer
+          format: int64
+        nuBanco:
+          type: string
+        cdAgenciaDigito:
+          type: string
+        cdConta:
+          type: string
+        flContaPadrao:
+          type: boolean
+    AtualizarStatusProdutoRequest:
+      type: object
+      properties:
+        flHabilitado:
+          type: boolean
+        cdTipoRecebivel:
+          type: integer
+          format: int32
+        flComCoobrigacao:
+          type: boolean
+    Produto:
+      type: object
+      properties:
+        codigoModalidadeCatalogoProduto:
+          type: integer
+          format: int64
+        cdGrupoConciliacao:
+          type: integer
+          format: int64
+        flHabilitado:
+          type: boolean
+        flComCoobrigacao:
+          type: boolean
+        flProdutoIsentoIOF:
+          type: boolean
+        cdTipoRecebivel:
+          type: integer
+          format: int32
+    Parametros:
+      type: object
+      properties:
+        flContratacaoAutomatica:
+          type: boolean
+        flIntegracaoCredito:
+          type: boolean
+        flIntegracaoFormalizacao:
+          type: boolean
+        flIntegracaoTesouraria:
+          type: boolean
+        flIntegracaoGestaoCaixa:
+          type: boolean
+        flIntegracaoPagamento:
+          type: boolean
+        flIntegracaoProcessador:
+          type: boolean
+        flIntegracaoCobranca:
+          type: boolean
+        flIntegracaoValidacaoDuplicata:
+          type: boolean
+        flIntegracaoLiquidacao:
+          type: boolean
+        flIntegracaoBoleto:
+          type: boolean
+        flIntegracaoRegistroDuplicata:
+          type: boolean
+    AtualizarTipoOtimizacaoLoteRequest:
+      type: object
+      properties:
+        tipoOtimizacao:
+          type: string
+          enum:
+            - MAIOR_CONSUMO_MAIOR_PRAZO
+            - MAIOR_PRAZO
+            - MAIOR_CONSUMO_MENOR_PRAZO
+            - MENOR_PRAZO
+    ExcluirLoteEnquadramentoRequest:
+      type: object
+      properties:
+        listaCodigoLote:
+          type: array
+          items:
+            type: integer
+            format: int64
+    ProdutoV2InsertResponse:
+      type: object
+      properties:
+        codigo:
+          type: integer
+          format: int64
+        flagHabilitado:
+          type: boolean
+        grupoConciliacao:
+          type: string
+          enum:
+            - EMPRESTIMO
+            - RECEBIVEL
+        flagProdutoIsentoIOF:
+          type: boolean
+        flagProdutoIOFPadrao:
+          type: boolean
+        dadosRecebiveis:
+          $ref: '#/components/schemas/ProdutoNegociacao'
+    Response:
+      type: object
+      properties:
+        idTracking:
+          type: string
+    DataFiltro:
+      type: object
+      properties:
+        inicio:
+          type: string
+        fim:
+          type: string
+    RelatoriosRequest:
+      type: object
+      properties:
+        dataOperacao:
+          $ref: '#/components/schemas/DataFiltro'
+        dataDesembolso:
+          $ref: '#/components/schemas/DataFiltro'
+        dataVencimento:
+          $ref: '#/components/schemas/DataFiltro'
+        codigoLote:
+          type: number
+        codigoOperacao:
+          type: integer
+          format: int64
+        seuNumero:
+          type: string
+        codigoProduto:
+          type: array
+          items:
+            type: integer
+            format: int64
+        grupoEconomico:
+          type: array
+          items:
+            type: integer
+            format: int64
+        sacado:
+          type: array
+          items:
+            type: string
+        cedente:
+          type: array
+          items:
+            type: string
+    Excel:
+      type: object
+      properties:
+        base64:
+          type: string
+        nomeArquivo:
+          type: string
+    ProgramaORCHRequest:
+      required:
+        - cdTipoRecusaAutomatica
+        - codigoGrupoEconomico
+        - codigoProduto
+        - flAjustarProximoDiaUtil
+        - flCheckUsuario
+        - flContratacaoAutomatica
+        - flHabilitado
+        - nomePrograma
+        - tipoAgrupamentoDesembolso
+        - tipoAgrupamentoFormalizacao
+        - tipoAncora
+        - tipoFormalizacao
+        - tipoLiquidacao
+      type: object
+      properties:
+        prazoRepasseMandatario:
+          type: integer
+          format: int64
+        prazoMinimoRecebivel:
+          type: integer
+          format: int64
+        cdTipoRecusaAutomatica:
+          type: integer
+          format: int64
+        nomePrograma:
+          type: string
+        flHabilitado:
+          type: boolean
+        flContratacaoAutomatica:
+          type: boolean
+        flCheckUsuario:
+          type: boolean
+        tipoRegistroDuplicata:
+          type: string
+          enum:
+            - OBRIGATORIO
+            - OPCIONAL
+            - NAO_APLICAVEL
+        codigoProduto:
+          type: integer
+          format: int64
+        codigoGrupoEconomico:
+          type: integer
+          format: int64
+        tipoAncora:
+          $ref: '#/components/schemas/ProgramaORCHRequestTipoAncora'
+        tipoFormalizacao:
+          $ref: '#/components/schemas/ProgramaORCHRequestTipoFormalizacao'
+        tipoAgrupamentoFormalizacao:
+          $ref: '#/components/schemas/ProgramaORCHRequestTipoAgrupamentoFormalizacao'
+        tipoAgrupamentoDesembolso:
+          $ref: '#/components/schemas/ProgramaORCHRequestTipoAncora'
+        flAjustarProximoDiaUtil:
+          type: boolean
+        tipoLiquidacao:
+          $ref: '#/components/schemas/ProgramaORCHRequestTipoLiquidacao'
+        jurosMoraDia:
+          type: number
+        multa:
+          type: number
+    PrlcSacadoRequest:
+      type: object
+      properties:
+        codigoPessoa:
+          type: integer
+          format: int64
+        cdLimiteCredito:
+          type: integer
+          format: int64
+        pcDivisaoReceita:
+          type: integer
+          format: int64
+    PrlcSacadoResponse:
+      type: object
+      properties:
+        codigo:
+          type: integer
+          format: int64
+        codigoPrograma:
+          type: integer
+          format: int64
+        codigoPessoa:
+          type: integer
+          format: int64
+        razaoSocial:
+          type: string
+        cnpj:
+          type: string
+        cdLimiteCredito:
+          type: integer
+          format: int64
+        pcDivisaoReceita:
+          type: integer
+          format: int64
+        statusParticipantePrograma:
+          type: string
+          enum:
+            - ONBOARDING
+            - PENDENTE
+            - CADASTRADO
+            - RECUSADO
+            - CANCELADO
+        contaMovimento:
+          type: string
+    ContaMovimentoRequest:
+      required:
+        - cdAgenciaDigito
+        - cdConta
+        - cdTipoConta
+        - nuBanco
+      type: object
+      properties:
+        nuBanco:
+          maxLength: 3
+          minLength: 3
+          type: string
+        cdConta:
+          maxLength: 13
+          minLength: 1
+          type: string
+        cdAgenciaDigito:
+          maxLength: 5
+          minLength: 1
+          type: string
+        cdTipoConta:
+          type: integer
+          format: int32
+    ContaMovimentoResponse:
+      type: object
+      properties:
+        cdDadoContaMovimentoParticipante:
+          type: integer
+          format: int64
+        nuBanco:
+          type: string
+        cdConta:
+          type: string
+        cdAgenciaDigito:
+          type: string
+        dsTipoConta:
+          type: string
+    ExportarCLientesRequest:
+      type: object
+      properties:
+        documentos:
+          type: array
+          items:
+            type: string
+        tipoCliente:
+          type: string
+        status:
+          type: string
+    PrlcCedenteRequest:
+      type: object
+      properties:
+        codigoPessoa:
+          type: integer
+          format: int64
+    PrlcCedenteResponse:
+      type: object
+      properties:
+        codigo:
+          type: integer
+          format: int64
+        codigoPrograma:
+          type: integer
+          format: int64
+        codigoPessoa:
+          type: integer
+          format: int64
+        razaoSocial:
+          type: string
+        cnpj:
+          type: string
+        convenioCobranca:
+          $ref: '#/components/schemas/PrlcCedenteResponseConvenioCobranca'
+        dsTipoDesembolso:
+          type: string
+    PrlcCedenteResponseConvenioCobranca:
+      type: object
+      properties:
+        codigo:
+          type: number
+        nome:
+          type: string
+    ConvenioCobrancaORCHRequest:
+      type: object
+      properties:
+        codigo:
+          type: number
+        nome:
+          type: string
+    ConvenioCobrancaORCHResponse:
+      type: object
+      properties:
+        codigo:
+          type: number
+        nome:
+          type: string
+    DadosDesembolsoRequest:
+      type: object
+      properties:
+        cdTipoDesembolso:
+          type: integer
+          format: int32
+        nuBanco:
+          type: string
+        cdAgenciaDigito:
+          type: string
+        cdConta:
+          type: string
+        flContaPadrao:
+          type: boolean
+    ProcessamentoClienteArquivoOrchResponse:
+      type: object
+      properties:
+        CdCtrlProcessamentoCliente:
+          type: integer
+          format: int64
+        CdIdentificadorProcessamento:
+          type: string
+        NmArquivo:
+          type: string
+        TpSituacaoProcessamento:
+          type: string
+        DsErro:
+          type: string
+        FlAtivo:
+          type: string
+        DsLogin:
+          type: string
+    SalvarProdutoRequest:
+      type: object
+      properties:
+        codigo:
+          type: integer
+          format: int64
+    CamundaResponse:
+      type: object
+      properties:
+        processado:
+          type: boolean
+    TesourariaIntegracaoRetornoRequest:
+      type: object
+      properties:
+        pcTirTesouraria:
+          type: number
+        pcCustoCaixa:
+          type: number
+        nuProtocoloCustoCaixa:
+          type: integer
+          format: int64
+        dsMensagemRetornoTesouraria:
+          type: string
+    DesembolsoManualRequest:
+      type: object
+      properties:
+        protocoloSPAG:
+          type: string
+        protocoloPIX:
+          type: string
+        tipoDesembolso:
+          type: string
+          enum:
+            - TED
+            - DOC
+            - CREDITO_EM_CONTA
+            - PIX
+    StatusProcessoRetorno:
+      type: object
+      properties:
+        sucesso:
+          type: boolean
+    FormalizacaoManualRequest:
+      type: object
+      properties:
+        justificativa:
+          type: string
+        prosseguir:
+          type: boolean
+    ResumoRequest:
+      required:
+        - taxa
+      type: object
+      properties:
+        taxa:
+          type: number
+        dataDesembolso:
+          type: string
+          format: date
+    ResumoLoteEnquadramentoResponse:
+      required:
+        - taxa
+      type: object
+      properties:
+        codigoLote:
+          type: integer
+          format: int64
+        tipoOtimizacao:
+          type: string
+          enum:
+            - MAIOR_CONSUMO_MAIOR_PRAZO
+            - MAIOR_PRAZO
+            - MAIOR_CONSUMO_MENOR_PRAZO
+            - MENOR_PRAZO
+        grupoEconomico:
+          type: string
+        titulosAceitos:
+          type: integer
+          format: int32
+        valorAceito:
+          type: number
+        valorAntecipado:
+          type: number
+        taxa:
+          type: number
+        dataDesembolso:
+          type: string
+          format: date
+    BoletaLoteRequest:
+      required:
+        - dataDesembolso
+        - taxaOperacao
+      type: object
+      properties:
+        taxaOperacao:
+          type: number
+        dataDesembolso:
+          type: string
+          format: date
+        documentoCedente:
+          type: string
+    ExportarLoteRequest:
+      type: object
+      properties:
+        nomeGrupoEconomico:
+          type: string
+        documentoCedente:
+          type: string
+    Iof:
+      type: object
+      properties:
+        aliquotaDiaria:
+          type: number
+          format: double
+        aliquotaAdicional:
+          type: number
+          format: double
+        prazoMaximo:
+          minimum: 1
+          type: integer
+          format: int64
+        codigoProduto:
+          type: integer
+          format: int64
+        dataInicioVigencia:
+          type: string
+    IofListagem:
+      type: object
+      properties:
+        aliquotaDiaria:
+          type: number
+          format: double
+        aliquotaAdicional:
+          type: number
+          format: double
+        prazoMaximo:
+          minimum: 1
+          type: integer
+          format: int64
+        codigoProduto:
+          type: integer
+          format: int64
+        dataInicioVigencia:
+          type: string
+        codigo:
+          type: integer
+          format: int64
+        dataCriacao:
+          type: string
+        login:
+          type: string
+        status:
+          type: string
+          enum:
+            - AGENDADA
+            - VIGENTE
+            - VENCIDA
+            - ANULADA
+    FiltroNivelOperacaoRequest:
+      type: object
+      properties:
+        filtroCnpjsContrapartes:
+          type: array
+          items:
+            type: string
+        filtroNumeroTitulo:
+          type: string
+    EstadoContratacaoOperacaoResponse:
+      type: object
+      properties:
+        codigoEstadoContratacao:
+          type: integer
+          format: int64
+        descricaoEstadoContratacao:
+          type: string
+    FaroisContratacaoResponse:
+      type: object
+      properties:
+        cdEstagioContratacao:
+          type: integer
+          format: int64
+        dsEstagioContratacao:
+          type: string
+        cdNivelLinhaFarol:
+          type: integer
+          format: int64
+        dsNivelLinhaFarol:
+          type: string
+        cdImagemFarol:
+          type: integer
+          format: int64
+        dsImagemFarol:
+          type: string
+        faroisLinhaErro:
+          type: array
+          items:
+            $ref: '#/components/schemas/FarolLinhaErroResponse'
+    FarolLinhaErroResponse:
+      type: object
+      properties:
+        cdFarolLinhaErro:
+          type: integer
+          format: int64
+        dsTituloErro:
+          type: string
+        dsFarolLinhaErro:
+          type: string
+    GrupoEconomicoResponse:
+      type: object
+      properties:
+        codigoGrupoEconomico:
+          type: integer
+          format: int64
+        nomeGrupoEconomico:
+          type: string
+        codigoTipoAncora:
+          type: integer
+          format: int64
+        qntLotesAtivos:
+          type: integer
+          format: int64
+        valorNominal:
+          type: number
+          format: double
+        valorDescontado:
+          type: number
+          format: double
+        farois:
+          type: array
+          items:
+            $ref: '#/components/schemas/FaroisContratacaoResponse'
+    OperacoesResponse:
+      type: object
+      properties:
+        flComCoobrigacao:
+          type: boolean
+        codigoOperacao:
+          type: integer
+          format: int64
+        codigoParticipanteContraparte:
+          type: integer
+          format: int64
+        razaoSocialParticipanteContraparte:
+          type: string
+        cpfCnpjParticipanteContraparte:
+          type: string
+        qntTitulos:
+          type: integer
+          format: int64
+        valorNominal:
+          type: number
+        valorDescontado:
+          type: number
+        farois:
+          type: array
+          items:
+            $ref: '#/components/schemas/FaroisContratacaoResponse'
+        parte:
+          $ref: '#/components/schemas/Pessoa'
+        contraParte:
+          $ref: '#/components/schemas/Pessoa'
+        tipoStatusOperacao:
+          $ref: '#/components/schemas/StatusOperacaoResponse'
+        estadoContratacaoOperacao:
+          $ref: '#/components/schemas/EstadoContratacaoOperacaoResponse'
+        dataVencimentoOperacao:
+          type: string
+        codigoLote:
+          type: number
+        codigoPrograma:
+          type: number
+        codigoTipoAncora:
+          type: number
+        dataDesembolso:
+          type: string
+        dataOperacao:
+          type: string
+        codigoModalidadeCatalogoProduto:
+          type: number
+        codigoFormaCalculo:
+          type: number
+        codigoIndexador:
+          type: number
+        grupoEconomicoOperacao:
+          $ref: '#/components/schemas/GrupoEconomicoResponse'
+        login:
+          type: string
+        codigoTipoLiquidacao:
+          type: number
+    Pessoa:
+      type: object
+      properties:
+        codigoParticipante:
+          type: integer
+          format: int64
+        cnpj:
+          type: string
+        razaoSocial:
+          type: string
+        tipoRelacionamento:
+          $ref: '#/components/schemas/PessoaTipoRelacionamento'
+    PessoaTipoRelacionamento:
+      type: object
+      properties:
+        codigo:
+          type: integer
+          format: int64
+        descricao:
+          type: string
+    StatusOperacaoResponse:
+      type: object
+      properties:
+        codigo:
+          type: integer
+          format: int64
+        descricao:
+          type: string
+    FiltroNivelParteRequest:
+      type: object
+      properties:
+        filtroCnpjsPartes:
+          type: array
+          items:
+            type: string
+        filtroCnpjsContrapartes:
+          type: array
+          items:
+            type: string
+        filtroNumeroTitulo:
+          type: string
+    ParteResponse:
+      type: object
+      properties:
+        codigoParticipanteParte:
+          type: integer
+          format: int64
+        razaoSocialParte:
+          type: string
+        cpfCnpjParte:
+          type: string
+        qntOperacoesAtivas:
+          type: integer
+          format: int64
+        valorNominal:
+          type: number
+          format: double
+        valorDescontado:
+          type: number
+          format: double
+        cdTipoStatusOperacao:
+          type: integer
+          format: int64
+        farois:
+          type: array
+          items:
+            $ref: '#/components/schemas/FaroisContratacaoResponse'
+    FiltroNivelLoteRequest:
+      type: object
+      properties:
+        filtroCodigoLote:
+          type: integer
+          format: int64
+        filtroCnpjsPartes:
+          type: array
+          items:
+            type: string
+        filtroCnpjsContrapartes:
+          type: array
+          items:
+            type: string
+        filtroNumeroTitulo:
+          type: string
+    LoteResponse:
+      type: object
+      properties:
+        valorLiquido:
+          type: number
+        valorIOF:
+          type: number
+        codigoLote:
+          type: integer
+          format: int64
+        nomeLote:
+          type: string
+        qntOperacoesAtivas:
+          type: integer
+          format: int64
+        valorNominal:
+          type: number
+          format: double
+        valorDescontado:
+          type: number
+          format: double
+        flHabilitarBotaoRetomar:
+          type: boolean
+        flHabilitarBotaoCancelar:
+          type: boolean
+        flHabilitarBotaoReprocessoRegistro:
+          type: boolean
+        flTermo:
+          type: boolean
+        flComIOF:
+          type: boolean
+        dtDesembolso:
+          type: string
+        cdTipoAgrupamentoDesembolso:
+          type: integer
+          format: int64
+        cdTipoStatusOperacao:
+          type: integer
+          format: int64
+        farois:
+          type: array
+          items:
+            $ref: '#/components/schemas/FaroisContratacaoResponse'
+        cdTipoAncora:
+          type: integer
+          format: int64
+    FiltroNivelGrupoEconomicoRequest:
+      type: object
+      properties:
+        filtroCodigosGruposEconomicos:
+          type: array
+          items:
+            type: integer
+            format: int64
+        filtroCodigoLote:
+          type: integer
+          format: int64
+        filtroCnpjsPartes:
+          type: array
+          items:
+            type: string
+        filtroCnpjsContrapartes:
+          type: array
+          items:
+            type: string
+        filtroNumeroTitulo:
+          type: string
+    GrupoEconomicoDashboardResponse:
+      type: object
+      properties:
+        codigoGrupoEconomico:
+          type: integer
+          format: int64
+        nomeGrupoEconomico:
+          type: string
+        qntLotesAtivos:
+          type: integer
+          format: int64
+        valorNominal:
+          type: number
+          format: double
+        valorDescontado:
+          type: number
+          format: double
+        farois:
+          type: array
+          items:
+            $ref: '#/components/schemas/FaroisContratacaoResponse'
+    ObterDadosPrincipaisClienteResponse:
+      type: object
+      properties:
+        codigoPessoa:
+          type: integer
+          format: int64
+        numeroCpfCnpj:
+          type: string
+        nomePessoa:
+          type: string
+        dsLogin:
+          type: string
+    LogRepresentation:
+      type: object
+      properties:
+        apiError:
+          type: string
+        dateTime:
+          type: string
+        hostname:
+          type: string
+        href:
+          type: string
+        logLevel:
+          type: string
+        message:
+          type: string
+        navigatorInfo:
+          type: string
+    ProdutoV2Listagem:
+      type: object
+      properties:
+        codigo:
+          type: integer
+          format: int64
+        flagHabilitado:
+          type: boolean
+        grupoConciliacao:
+          type: string
+          enum:
+            - EMPRESTIMO
+            - RECEBIVEL
+        nome:
+          type: string
+    ProdutoV2Response:
+      type: object
+      properties:
+        codigo:
+          type: integer
+          format: int64
+        flagHabilitado:
+          type: boolean
+        grupoConciliacao:
+          type: string
+          enum:
+            - EMPRESTIMO
+            - RECEBIVEL
+        flagProdutoIsentoIOF:
+          type: boolean
+        flagProdutoIOFPadrao:
+          type: boolean
+        dadosRecebiveis:
+          $ref: '#/components/schemas/ProdutoNegociacao'
+        nome:
+          type: string
+    ContrapartesResponse:
+      type: object
+      properties:
+        paginacaoPagina:
+          type: integer
+          format: int32
+        paginacaoLimite:
+          type: integer
+          format: int32
+        paginacaoTotal:
+          type: integer
+          format: int32
+        operacoes:
+          type: array
+          items:
+            $ref: '#/components/schemas/OperacoesResponse'
+    ResponseStatus:
+      type: object
+      properties:
+        status:
+          type: string
+        dsErro:
+          type: string
+    Paginacao:
+      required:
+        - itensPorPagina
+        - ordem
+        - ordenadoPor
+        - pagina
+        - totalItens
+        - totalPaginas
+      type: object
+      properties:
+        itensPorPagina:
+          type: integer
+          format: int32
+        pagina:
+          type: integer
+          format: int32
+        totalItens:
+          type: integer
+          format: int64
+        totalPaginas:
+          type: integer
+          format: int32
+        ordem:
+          type: string
+        ordenadoPor:
+          type: string
+    SacadoResponsePaginado:
+      type: object
+      properties:
+        sacados:
+          type: array
+          items:
+            $ref: '#/components/schemas/PrlcSacadoResponse'
+        paginacao:
+          $ref: '#/components/schemas/Paginacao'
+    QuantidadeClientesPorStatus:
+      type: object
+      properties:
+        pendente:
+          type: integer
+          format: int64
+        recusado:
+          type: integer
+          format: int64
+        sucesso:
+          type: integer
+          format: int64
+        onboarding:
+          type: integer
+          format: int64
+        cancelado:
+          type: integer
+          format: int64
+    CedenteProgramaResponse:
+      type: object
+      properties:
+        codigo:
+          type: integer
+          format: int64
+        codigoPrograma:
+          type: integer
+          format: int64
+        codigoPessoa:
+          type: integer
+          format: int64
+        razaoSocial:
+          type: string
+        cnpj:
+          type: string
+        convenioCobranca:
+          $ref: '#/components/schemas/PrlcCedenteResponseConvenioCobranca'
+        dsTipoDesembolso:
+          type: string
+        contaMovimento:
+          type: string
+        statusParticipantePrograma:
+          type: string
+          enum:
+            - ONBOARDING
+            - PENDENTE
+            - CADASTRADO
+            - RECUSADO
+            - CANCELADO
+    CedentesPaginadoResponse:
+      type: object
+      properties:
+        cedentes:
+          type: array
+          items:
+            $ref: '#/components/schemas/CedenteProgramaResponse'
+        paginacao:
+          $ref: '#/components/schemas/Paginacao'
+    DadosArquivo:
+      type: object
+      properties:
+        CdCtrlProcessamentoCliente:
+          type: integer
+          format: int64
+        CdIdentificadorProcessamento:
+          type: string
+        NmArquivo:
+          type: string
+        TpSituacaoProcessamento:
+          type: string
+        DsErro:
+          type: string
+        FlAtivo:
+          type: string
+        DsLogin:
+          type: string
+    ListaLinhasArquivo:
+      type: object
+      properties:
+        CdCtrlProcessamentoCliente:
+          type: integer
+          format: int64
+        CdCtrlProcessamentoClienteLinha:
+          type: integer
+          format: int64
+        CdLimiteCredito:
+          type: number
+        NrLinha:
+          type: integer
+          format: int64
+        DsErro:
+          type: string
+        DsLogin:
+          type: string
+        NuCpfCnpj:
+          type: string
+        PcDivisaoReceita:
+          type: string
+        TpSituacaoProcessamento:
+          type: string
+    ProcessamentoClienteArquivoStatusResponse:
+      type: object
+      properties:
+        TotalLinha:
+          type: integer
+          format: int64
+        TotalLinhaProcessadaSucesso:
+          type: integer
+          format: int64
+        TotalLinhaProcessadaErro:
+          type: integer
+          format: int64
+        TotalLinhaAguardandoProcessamento:
+          type: integer
+          format: int64
+        DadosArquivo:
+          $ref: '#/components/schemas/DadosArquivo'
+        ListaLinhasArquivo:
+          type: array
+          items:
+            $ref: '#/components/schemas/ListaLinhasArquivo'
+    ProcessamentoClienteLinhaResponse:
+      type: object
+      properties:
+        CdCtrlProcessamentoClienteLinha:
+          type: integer
+          format: int64
+        CdCtrlProcessamentoCliente:
+          type: integer
+          format: int64
+        CdLimiteCredito:
+          type: integer
+          format: int64
+        NuCpfCnpj:
+          type: string
+        PcDivisaoReceita:
+          type: number
+        TpSituacaoProcessamento:
+          type: string
+        DsErro:
+          type: string
+        DsLogin:
+          type: string
+    ProdutoGlobal:
+      type: object
+      properties:
+        nome:
+          type: string
+        codigo:
+          type: integer
+          format: int64
+        flComCoobrigacao:
+          type: boolean
+    TesourariaResponse:
+      type: object
+      properties:
+        cdIntegracaoOperacaoTesouraria:
+          type: integer
+          format: int64
+        cdOperacaoCessao:
+          type: integer
+          format: int64
+        pcTirTesouraria:
+          type: number
+        pcCustoCaixa:
+          type: number
+        nuProtocoloCustoCaixa:
+          type: integer
+          format: int64
+        nuProtocoloGestaoCaixa:
+          type: string
+        dsMensagemRetornoTesouraria:
+          type: string
+        dsMensagemRetornoGestaoCaixa:
+          type: string
+    ObservacaoParticipanteResponse:
+      type: object
+      properties:
+        dsObservacao:
+          type: string
+    ArquivoBase64Response:
+      type: object
+      properties:
+        base64:
+          type: string
+        nomeArquivo:
+          type: string
+    StatusProcessamentoLoteResponse:
+      type: object
+      properties:
+        codigoControleProcessamento:
+          type: integer
+          format: int64
+        idTracking:
+          type: string
+        codigoLote:
+          type: integer
+          format: int64
+        codigoGrupoEconomico:
+          type: integer
+          format: int64
+        nomeArquivo:
+          type: string
+        situacaoProcessamento:
+          type: string
+        descricaoErro:
+          type: string
+        dataHoraInclusao:
+          type: string
+        loginSolicitante:
+          type: string
+        totalLinhasArquivo:
+          type: integer
+          format: int64
+        totalLinhasProcessados:
+          type: integer
+          format: int64
+    LoteEnquadramentoRepresentation:
+      type: object
+      properties:
+        codigoLote:
+          type: integer
+          format: int64
+        codigoPrograma:
+          type: integer
+          format: int64
+        tipoOtimizacao:
+          type: string
+          enum:
+            - MAIOR_CONSUMO_MAIOR_PRAZO
+            - MAIOR_PRAZO
+            - MAIOR_CONSUMO_MENOR_PRAZO
+            - MENOR_PRAZO
+        grupoEconomico:
+          type: string
+        quantidadeTitulos:
+          type: integer
+          format: int32
+        quantidadeTitulosAceitos:
+          type: integer
+          format: int32
+        valorTotal:
+          type: number
+        valorTotalAceito:
+          type: number
+        valorTotalReprovado:
+          type: number
+        prazoMedioAceito:
+          type: integer
+          format: int32
+        dataCriacao:
+          type: string
+          format: date-time
+        unicoCedente:
+          type: boolean
+        status:
+          type: string
+          enum:
+            - CRIADO
+            - EM_VALIDACAO
+            - VALIDADO
+            - ENVIADO_PARA_CONTRATACAO
+            - ERRO
+            - CANCELADO
+            - OTIMIZADO
+            - CONTRATACAO_PARCIAL
+            - CONTRATADO
+        tipoEntradaLote:
+          type: string
+    LotesPaginadoResponse:
+      type: object
+      properties:
+        lotes:
+          type: array
+          items:
+            $ref: '#/components/schemas/LoteEnquadramentoRepresentation'
+        paginacao:
+          $ref: '#/components/schemas/PaginacaoRepresentation'
+    PaginacaoRepresentation:
+      required:
+        - itensPorPagina
+        - pagina
+        - totalItens
+        - totalPaginas
+      type: object
+      properties:
+        itensPorPagina:
+          type: integer
+          format: int32
+        pagina:
+          type: integer
+          format: int32
+        totalItens:
+          type: integer
+          format: int64
+        totalPaginas:
+          type: integer
+          format: int32
+    TituloEnquadramentoDetalhadoRepresentation:
+      type: object
+      properties:
+        cdTituloEnquadramento:
+          type: integer
+          format: int64
+        codigoLote:
+          type: integer
+          format: int64
+        codigoPrograma:
+          type: integer
+          format: int64
+        nomeSacado:
+          type: string
+        documentoSacado:
+          type: string
+        nomeCedente:
+          type: string
+        documentoCedente:
+          type: string
+        dataEmissaoTitulo:
+          type: string
+          format: date
+        dataVencimento:
+          type: string
+          format: date
+        dataLiquidacaoMandatario:
+          type: string
+          format: date
+        nuSeuNumero:
+          type: string
+        valorTitulo:
+          type: number
+        statusTitulo:
+          type: string
+    TitulosPaginadoResponse:
+      type: object
+      properties:
+        titulos:
+          type: array
+          items:
+            $ref: '#/components/schemas/TituloEnquadramentoDetalhadoRepresentation'
+        paginacao:
+          $ref: '#/components/schemas/PaginacaoRepresentation'
+    RestricoesBoletagemResponse:
+      type: object
+      properties:
+        flMsgRegistroDuplicataObrigatorio:
+          type: boolean
+    ProgressoValidacaoResponse:
+      type: object
+      properties:
+        totalTitulos:
+          type: integer
+          format: int64
+        totalTitulosValidados:
+          type: integer
+          format: int64
+        totalTitulosFinalizados:
+          type: integer
+          format: int64
+    ProcessamentoEtapasResponse:
+      type: object
+      properties:
+        dataInicio:
+          type: string
+          format: date-time
+        dataFim:
+          type: string
+          format: date-time
+        statusLoteEnquadramento:
+          type: string
+          enum:
+            - CRIADO
+            - EM_VALIDACAO
+            - VALIDADO
+            - ENVIADO_PARA_CONTRATACAO
+            - ERRO
+            - CANCELADO
+            - OTIMIZADO
+            - CONTRATACAO_PARCIAL
+            - CONTRATADO
+    TBLoteEnquadramentoArquivoResponse:
+      type: object
+      properties:
+        nomeVAN:
+          type: string
+        nomeArquivo:
+          type: string
+        erros:
+          type: array
+          items:
+            type: string
+    DatasDesembolsoResponse:
+      type: object
+      properties:
+        datas:
+          type: array
+          items:
+            type: string
+            format: date
+    Cedente:
+      type: object
+      properties:
+        documentoCedente:
+          type: string
+        nomeCedente:
+          type: string
+        titulosContratados:
+          type: boolean
+    ConsultaCedentesResponse:
+      type: object
+      properties:
+        cedentes:
+          type: array
+          items:
+            $ref: '#/components/schemas/Cedente'
+    StatusLoteEnquadramentoResponse:
+      type: object
+      properties:
+        statusLote:
+          type: string
+        quantidade:
+          type: integer
+          format: int64
+        nomeCampo:
+          type: string
+    PessoaGlobalResponse:
+      type: object
+      properties:
+        codigoPessoa:
+          type: integer
+          format: int64
+        razaoSocial:
+          type: string
+        cnpj:
+          type: string
+    PapelGlobalOrchResponse:
+      type: object
+      properties:
+        codigoTipoRelacionamento:
+          type: integer
+          format: int64
+        nomeTipoRelacionamento:
+          type: string
+    GrupoEconomicoGlobalResponse:
+      type: object
+      properties:
+        codigoGrupoEconomico:
+          type: integer
+          format: int64
+        nomeGrupoEconomico:
+          type: string
+    ContaGlobalResponse:
+      type: object
+      properties:
+        nuBanco:
+          type: string
+        cdConta:
+          type: string
+        cdAgenciaDigito:
+          type: string
+        tipoConta:
+          $ref: '#/components/schemas/ContaGlobalResponseTipoConta'
+    ContaGlobalResponseTipoConta:
+      type: object
+      properties:
+        codigo:
+          type: integer
+          format: int64
+        descricao:
+          type: string
+    BancoORCHResponse:
+      type: object
+      properties:
+        ordem:
+          type: number
+        identificador:
+          type: number
+        codigoBanco:
+          type: string
+        nome:
+          type: string
+        nomeAbreviado:
+          type: string
+    AgenciaORCHResponse:
+      type: object
+      properties:
+        codigoBanco:
+          type: string
+        codigoAgencia:
+          type: string
+        digitoVerificadorAgencia:
+          type: string
+        nomeAgencia:
+          type: string
+    DashboardParteResponse:
+      type: object
+      properties:
+        razaoSocialParte:
+          type: string
+        cpfCnpjParte:
+          type: string
+    TitulosResponse:
+      type: object
+      properties:
+        codigoTitulo:
+          type: integer
+          format: int64
+        numeroTitulo:
+          type: string
+        dataVencimento:
+          type: string
+        valorNominal:
+          type: number
+          format: double
+        valorDescontado:
+          type: number
+          format: double
+        farois:
+          type: array
+          items:
+            $ref: '#/components/schemas/FaroisContratacaoResponse'
+    DashboardContraParteResponse:
+      type: object
+      properties:
+        razaoSocialParticipanteContraparte:
+          type: string
+        cpfCnpjParticipanteContraparte:
+          type: string
+    ConvenioCliente:
+      type: object
+      properties:
+        nuConvenioCliente:
+          type: number
+        nmClienteBv:
+          type: string
+    ResultRepresentation:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        status:
+          type: string
+        version:
+          type: string
+    StatusUp:
+      type: object
+      properties:
+        status:
+          type: string
+    UserRepresentation:
+      type: object
+      properties:
+        name:
+          type: string
+        roles:
+          type: array
+          items:
+            type: string
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

@@ -1,6 +1,6 @@
 import SwaggerParser from "@apidevtools/swagger-parser";
 import { FunctionDeclaration, FunctionDeclarationSchema, FunctionDeclarationSchemaProperty, SchemaType } from "@google/generative-ai";
-const swaggerFile = './src/swagger.yaml';
+const swaggerFile = './src/swagger-bff-3.yaml';
 
 let toolsDefinition: { [k: string]: ToolDefinition } = {};
 
@@ -12,7 +12,7 @@ interface ToolDefinition {
 
 interface ApiParam {
     name: string;
-    schema: { type: 'string' | 'integer' | 'number' };
+    schema: { type: 'string' | 'integer' | 'number' |'boolean' };
     required: boolean;
     in: 'path' | 'query' | 'body';
     description: string
@@ -29,6 +29,12 @@ function getType(type: string): SchemaType {
         case 'number':
         case 'integer':
             return SchemaType.NUMBER;
+
+        case 'boolean':
+            return SchemaType.BOOLEAN;
+
+        case 'array':
+            return SchemaType.ARRAY;
     
         default:
             throw new Error("Tipo de parâmetro '"+type+"' não é válido");
@@ -88,15 +94,21 @@ async function run() {
 
                 parameters?.forEach((param: any) => {
 
-                    const p = param as ApiParam;
+                    try {
 
-                    declaration.parameters!.properties[p.name] = {
-                        type: getType(p.schema.type),
-                        nullable: p.required,
-                        description: p.description,
-                    } as FunctionDeclarationSchemaProperty;
+                        const p = param as ApiParam;
 
-                    params[p.name] = p.in;
+                        declaration.parameters!.properties[p.name] = {
+                            type: getType(p.schema.type),
+                            nullable: p.required,
+                            description: p.description,
+                        } as FunctionDeclarationSchemaProperty;
+
+                        params[p.name] = p.in;
+
+                    } catch (e) {
+                        console.error(e);
+                    }
 
                 });
 
